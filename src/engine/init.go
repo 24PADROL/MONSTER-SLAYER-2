@@ -13,7 +13,7 @@ const (
 )
 
 func (e *Engine) Init() {
-	rl.InitWindow(ScreenWidth, ScreenHeight, "Arcadia")
+	rl.InitWindow(ScreenWidth, ScreenHeight, "Monster Slayer 2")
 
 	// Initialisation des variables de l'engine
 	e.IsRunning = true
@@ -24,6 +24,7 @@ func (e *Engine) Init() {
 	e.InitCamera()
 	e.InitMusic()
 	e.InitMap("textures/map/tilesets/map.json")
+	//e.InitItem() , je travaille dessus encore là
 
 }
 
