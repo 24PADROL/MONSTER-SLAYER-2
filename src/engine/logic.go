@@ -52,9 +52,7 @@ func (e *Engine) InGameLogic() {
 	if rl.IsKeyDown(rl.KeyD) || rl.IsKeyDown(rl.KeyRight) {
 		e.Player.Position.X += e.Player.Speed
 	}
-	if rl.IsKeyPressed(rl.KeyTab){
-		e.StateMenu = menu(INVENTORY)
-	}
+}
 
 
 	// Camera
@@ -65,7 +63,10 @@ func (e *Engine) InGameLogic() {
 	if rl.IsKeyPressed(rl.KeyEscape) || rl.IsKeyPressed(rl.KeyP) {
 		e.StateEngine = PAUSE
 	}
-
+	if rl.IsKeyPressed(rl.KeyTab){
+		e.StateMenu = menu(INVENTORY) 
+	}
+	
 	e.CheckCollisions()
 
 	//Musique
