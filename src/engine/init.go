@@ -43,7 +43,7 @@ func (e *Engine) InitEntities() {
 	}
 
 	e.Monsters = append(e.Monsters, entity.Monster{
-		Name:     "claude",
+		Name:     "Yann",
 		Position: rl.Vector2{X: 400, Y: 320},
 		Health:   20,
 		Damage:   5,
@@ -72,6 +72,10 @@ func (e *Engine) InitMusic() {
 	e.Music = rl.LoadMusicStream("sounds/music/OSC-Ambient-Time-08-Egress.mp3")
 
 	rl.PlayMusicStream(e.Music)
+}
+
+func (e *Engine) InitItem() {
+	Name:	"Seringue",
 }
 
 //bonjourvvv
