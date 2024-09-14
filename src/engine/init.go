@@ -74,9 +74,9 @@ func (e *Engine) InitMusic() {
 	rl.PlayMusicStream(e.Music)
 }
 
-func (e *Engine) InitItem() {
-	Name:	"Seringue",
-}
+//func (e *Engine) InitItem() {
+	//Name:	"Seringue",
+//}
 
 //bonjourvvv
 
