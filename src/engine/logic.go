@@ -62,7 +62,7 @@ func (e *Engine) InGameLogic() {
 		e.StateEngine = PAUSE
 	}
 	if rl.IsKeyPressed(rl.KeyTab){
-		e.StateMenu = menu(INVENTORY) 
+		e.StateMenu = menu(INVENTORY)
 	}
 
 	e.CheckCollisions()
