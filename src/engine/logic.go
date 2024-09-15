@@ -21,9 +21,7 @@ func (e *Engine) HomeLogic() {
 		e.StateEngine = INGAME
 		rl.StopMusicStream(e.Music)
 	}
-	if rl.IsKeyPressed(rl.KeyF8) {
-		e.StateMenu = SETTINGS
-	}
+
 	if rl.IsKeyPressed(rl.KeyEscape) {
 		e.IsRunning = false
 	}
@@ -31,6 +29,10 @@ func (e *Engine) HomeLogic() {
 
 func (e *Engine) SettingsLogic() {
 	//Menus
+	if rl.IsKeyPressed(rl.KeyF8) {
+		e.StateMenu = SETTINGS
+		//CA MARCHE PAAAS AVANT CA MARCHAIT
+	}
 	if rl.IsKeyPressed(rl.KeyB) {
 		e.StateMenu = HOME
 	}
