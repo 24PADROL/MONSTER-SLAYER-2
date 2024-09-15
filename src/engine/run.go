@@ -18,6 +18,7 @@ func (engine *Engine) Run() {
 
 		case SETTINGS:
 			engine.SettingsLogic()
+			engine.SettingsRendering()
 
 		case PLAY:
 			switch engine.StateEngine {
@@ -28,6 +29,10 @@ func (engine *Engine) Run() {
 			case PAUSE:
 				engine.PauseRendering()
 				engine.PauseLogic()
+
+			case INVENTORY:
+				engine.InventoryRendering()
+				engine.InventoryLogic()
 
 			case GAMEOVER:
 				//...

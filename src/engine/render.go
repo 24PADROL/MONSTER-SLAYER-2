@@ -16,7 +16,7 @@ func (e *Engine) HomeRendering() {
 	rl.DrawText("Home Menu", int32(rl.GetScreenWidth())/2-rl.MeasureText("Home Menu", 40)/2, int32(rl.GetScreenHeight())/2-150, 40, rl.RayWhite)
 	rl.DrawText("[Enter] to Play", int32(rl.GetScreenWidth())/2-rl.MeasureText("[Enter] to Play", 20)/2, int32(rl.GetScreenHeight())/2, 20, rl.RayWhite)
 	rl.DrawText("[Esc] to Quit", int32(rl.GetScreenWidth())/2-rl.MeasureText("[Esc] to Quit", 20)/2, int32(rl.GetScreenHeight())/2+100, 20, rl.RayWhite)
-	rl.DrawText("[F8] to WRAAAAAH Settings", int32(rl.GetScreenWidth())/2-rl.MeasureText("[F8] to WRAAAAAH Settings", 20)/2, int32(rl.GetScreenHeight())/2+200, 20, rl.RayWhite)
+	rl.DrawText("[G] to WRAAAAAH Settings", int32(rl.GetScreenWidth())/2-rl.MeasureText("[G] to WRAAAAAH Settings", 20)/2, int32(rl.GetScreenHeight())/2+200, 20, rl.RayWhite)
 	//Les settings marche pas alors qu'avant ça marchait
 }
 
@@ -45,7 +45,19 @@ func (e *Engine) PauseRendering() {
 	rl.DrawText("[P] or [Esc] to resume", int32(rl.GetScreenWidth())/2-rl.MeasureText("[P] or [Esc] to resume", 20)/2, int32(rl.GetScreenHeight())/2, 20, rl.RayWhite)
 	rl.DrawText("[Q]/[A] to Quit", int32(rl.GetScreenWidth())/2-rl.MeasureText("[Esc] to Quit", 20)/2, int32(rl.GetScreenHeight())/2+100, 20, rl.RayWhite)
 
-	rl.EndDrawing()
+}
+func (e *Engine) InventoryRendering() {
+	rl.ClearBackground(rl.Purple)
+
+	rl.DrawText("C'EST L'INVENTAIRE CA", int32(rl.GetScreenWidth())/2-rl.MeasureText("C'EST L'INVENTAIRE CA", 20)/2, int32(rl.GetScreenHeight())/2, 20, rl.RayWhite)
+	//JE TESTE L'OVERTURE DE L'INVENTAIRE
+}
+
+func (e *Engine) SettingsRendering() {
+	rl.ClearBackground(rl.Yellow)
+	
+	rl.DrawText("SETTINGS", int32(rl.GetScreenWidth())/2-rl.MeasureText("SETTINGS", 20)/2, int32(rl.GetScreenHeight())/2, 20, rl.RayWhite)
+	//JE TESTE L'OVERTURE DE L'INVENTAIRE
 }
 
 func (e *Engine) RenderPlayer() {

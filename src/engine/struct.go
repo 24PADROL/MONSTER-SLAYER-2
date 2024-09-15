@@ -19,8 +19,8 @@ type engine int
 const (
 	INGAME  engine = iota
 	PAUSE    engine = iota
-	GAMEOVER engine = iota
 	INVENTORY engine = iota
+	GAMEOVER engine = iota
 )
 
 type Engine struct {

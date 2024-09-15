@@ -21,6 +21,10 @@ func (e *Engine) HomeLogic() {
 		e.StateEngine = INGAME
 		rl.StopMusicStream(e.Music)
 	}
+	if rl.IsKeyPressed(rl.KeyG) {
+		e.StateMenu = SETTINGS
+		//CA MARCHE PAAAS AVANT CA MARCHAIT
+	}
 
 	if rl.IsKeyPressed(rl.KeyEscape) {
 		e.IsRunning = false
@@ -29,15 +33,17 @@ func (e *Engine) HomeLogic() {
 
 func (e *Engine) SettingsLogic() {
 	//Menus
-	if rl.IsKeyPressed(rl.KeyF8) {
-		e.StateMenu = SETTINGS
-		//CA MARCHE PAAAS AVANT CA MARCHAIT
-	}
 	if rl.IsKeyPressed(rl.KeyB) {
 		e.StateMenu = HOME
 	}
 	//Musique
 	rl.UpdateMusicStream(e.Music)
+}
+func (e *Engine) InventoryLogic() {
+	if rl.IsKeyPressed(rl.KeyH) {
+		e.StateMenu = PLAY
+		e.StateEngine = INGAME
+	}
 }
 
 func (e *Engine) InGameLogic() {
@@ -54,6 +60,9 @@ func (e *Engine) InGameLogic() {
 	if rl.IsKeyDown(rl.KeyD) || rl.IsKeyDown(rl.KeyRight) {
 		e.Player.Position.X += e.Player.Speed
 	}
+	if rl.IsKeyPressed(rl.KeyTab){
+		e.StateEngine = INVENTORY
+	}
 
 	// Camera
 	e.Camera.Target = rl.Vector2{X: e.Player.Position.X + 70, Y: e.Player.Position.Y + 70}
@@ -62,9 +71,6 @@ func (e *Engine) InGameLogic() {
 	// Menus
 	if rl.IsKeyPressed(rl.KeyEscape) || rl.IsKeyPressed(rl.KeyP) {
 		e.StateEngine = PAUSE
-	}
-	if rl.IsKeyPressed(rl.KeyTab){
-		e.StateMenu = menu(INVENTORY)
 	}
 
 	e.CheckCollisions()
@@ -90,7 +96,7 @@ func (e *Engine) MonsterCollisions() {
 			monster.Position.Y > e.Player.Position.Y-20 &&
 			monster.Position.Y < e.Player.Position.Y+20 {
 
-			if monster.Name == "claude" {
+			if monster.Name == "Yann" {
 				e.NormalTalk(monster, "Bonjour")
 				if rl.IsKeyPressed(rl.KeyE) {
 					//lancer un combat ?
