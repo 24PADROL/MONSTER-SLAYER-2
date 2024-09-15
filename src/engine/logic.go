@@ -33,14 +33,14 @@ func (e *Engine) HomeLogic() {
 
 func (e *Engine) SettingsLogic() {
 	//Menus
-	if rl.IsKeyPressed(rl.KeyB) {
+	if rl.IsKeyPressed(rl.KeyG) {
 		e.StateMenu = HOME
 	}
 	//Musique
 	rl.UpdateMusicStream(e.Music)
 }
 func (e *Engine) InventoryLogic() {
-	if rl.IsKeyPressed(rl.KeyH) {
+	if rl.IsKeyPressed(rl.KeyTab) {
 		e.StateMenu = PLAY
 		e.StateEngine = INGAME
 	}

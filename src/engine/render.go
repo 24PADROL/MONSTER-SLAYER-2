@@ -33,30 +33,31 @@ func (e *Engine) InGameRendering() {
 	rl.EndMode2D() // On finit le rendu camera
 
 	// Ecriture fixe (car pas affectée par le mode camera)
-	rl.DrawText("Playing", int32(rl.GetScreenWidth())/2-rl.MeasureText("Playing", 40)/2, int32(rl.GetScreenHeight())/2-350, 40, rl.RayWhite)
-	rl.DrawText("[P] or [Esc] to Pause", int32(rl.GetScreenWidth())/2-rl.MeasureText("[P] or [Esc] to Pause", 20)/2, int32(rl.GetScreenHeight())/2-300, 20, rl.RayWhite)
+	rl.DrawText("Bienvenue !", int32(rl.GetScreenWidth())/2-rl.MeasureText("Bienvenue !", 40)/2, int32(rl.GetScreenHeight())/2-350, 40, rl.RayWhite)
+	rl.DrawText("[P] ou [Esc] pour mettre pause", int32(rl.GetScreenWidth())/2-rl.MeasureText("[P] ou [Esc] pour mettre en pause", 20)/2, int32(rl.GetScreenHeight())/2-300, 20, rl.RayWhite)
+	rl.DrawText("[Tab] pour ouvrir l'inventaire", int32(rl.GetScreenWidth())/2-rl.MeasureText("[Tab] pour ouvrir l'inventaire", 20)/2, int32(rl.GetScreenHeight())/2-250, 20, rl.RayWhite)
 
 }
 
 func (e *Engine) PauseRendering() {
 	rl.ClearBackground(rl.Red)
 
-	rl.DrawText("Paused", int32(rl.GetScreenWidth())/2-rl.MeasureText("Paused", 40)/2, int32(rl.GetScreenHeight())/2-150, 40, rl.RayWhite)
-	rl.DrawText("[P] or [Esc] to resume", int32(rl.GetScreenWidth())/2-rl.MeasureText("[P] or [Esc] to resume", 20)/2, int32(rl.GetScreenHeight())/2, 20, rl.RayWhite)
-	rl.DrawText("[Q]/[A] to Quit", int32(rl.GetScreenWidth())/2-rl.MeasureText("[Esc] to Quit", 20)/2, int32(rl.GetScreenHeight())/2+100, 20, rl.RayWhite)
+	rl.DrawText("Pause", int32(rl.GetScreenWidth())/2-rl.MeasureText("Paused", 40)/2, int32(rl.GetScreenHeight())/2-150, 40, rl.RayWhite)
+	rl.DrawText("[P] ou [Esc] pour continuer", int32(rl.GetScreenWidth())/2-rl.MeasureText("[P] ou [Esc] pour continuer", 20)/2, int32(rl.GetScreenHeight())/2, 20, rl.RayWhite)
+	rl.DrawText("[Q]/[A] pour quitter", int32(rl.GetScreenWidth())/2-rl.MeasureText("[Esc] pour quitter", 20)/2, int32(rl.GetScreenHeight())/2+100, 20, rl.RayWhite)
 
 }
 func (e *Engine) InventoryRendering() {
 	rl.ClearBackground(rl.Purple)
 
-	rl.DrawText("C'EST L'INVENTAIRE CA", int32(rl.GetScreenWidth())/2-rl.MeasureText("C'EST L'INVENTAIRE CA", 20)/2, int32(rl.GetScreenHeight())/2, 20, rl.RayWhite)
+	rl.DrawText("C'est l'inventaire ça", int32(rl.GetScreenWidth())/2-rl.MeasureText("C'est l'inventaire ça", 20)/2, int32(rl.GetScreenHeight())/2, 20, rl.RayWhite)
 	//JE TESTE L'OVERTURE DE L'INVENTAIRE
 }
 
 func (e *Engine) SettingsRendering() {
 	rl.ClearBackground(rl.Yellow)
 	
-	rl.DrawText("SETTINGS", int32(rl.GetScreenWidth())/2-rl.MeasureText("SETTINGS", 20)/2, int32(rl.GetScreenHeight())/2, 20, rl.RayWhite)
+	rl.DrawText("Paramètre", int32(rl.GetScreenWidth())/2-rl.MeasureText("Paramètre", 20)/2, int32(rl.GetScreenHeight())/2, 20, rl.RayWhite)
 	//JE TESTE L'OVERTURE DE L'INVENTAIRE
 }
 
