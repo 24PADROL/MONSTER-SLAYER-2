@@ -36,18 +36,15 @@ func (e *Engine) InGameRendering() {
 	rl.DrawText("Bienvenue !", int32(rl.GetScreenWidth())/2-rl.MeasureText("Bienvenue !", 40)/2, int32(rl.GetScreenHeight())/2-350, 40, rl.RayWhite)
 	rl.DrawText("[P] ou [Esc] pour mettre pause", int32(rl.GetScreenWidth())/2-rl.MeasureText("[P] ou [Esc] pour mettre en pause", 20)/2, int32(rl.GetScreenHeight())/2-300, 20, rl.RayWhite)
 	rl.DrawText("[Tab] pour ouvrir l'inventaire", int32(rl.GetScreenWidth())/2-rl.MeasureText("[Tab] pour ouvrir l'inventaire", 20)/2, int32(rl.GetScreenHeight())/2-250, 20, rl.RayWhite)
-<<<<<<< HEAD
 	rl.DrawText(strconv.Itoa(e.Player.Health), int32(rl.GetScreenWidth())/9-rl.MeasureText("Home Menu", 40)/2, int32(rl.GetScreenHeight())/2-450, 40, rl.Red)
 	rl.DrawText(strconv.Itoa(e.Player.Money), int32(rl.GetScreenWidth())/7-rl.MeasureText("Home Menu", 40)/2, int32(rl.GetScreenHeight())/2-400, 40, rl.Yellow)
 	rl.DrawText("Pv :", int32(rl.GetScreenWidth())/35-rl.MeasureText("Pv :", 40)/2, int32(rl.GetScreenHeight())/2-450, 35, rl.Red)
 	rl.DrawText("Argent :", int32(rl.GetScreenWidth())/20-rl.MeasureText("Argent :", 40)/2, int32(rl.GetScreenHeight())/2-400, 35, rl.Yellow)
 	//Affichage de la vie et de l'argent
 
-=======
 	if rl.IsCursorOnScreen(){	
-		rl.HideCursor()
+		rl.SetMouseCursor(3)
 	}
->>>>>>> 2729619ec1956815377837b8bc3df567a868b465
 }
 
 func (e *Engine) PauseRendering() {
