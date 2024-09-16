@@ -36,7 +36,9 @@ func (e *Engine) InGameRendering() {
 	rl.DrawText("Bienvenue !", int32(rl.GetScreenWidth())/2-rl.MeasureText("Bienvenue !", 40)/2, int32(rl.GetScreenHeight())/2-350, 40, rl.RayWhite)
 	rl.DrawText("[P] ou [Esc] pour mettre pause", int32(rl.GetScreenWidth())/2-rl.MeasureText("[P] ou [Esc] pour mettre en pause", 20)/2, int32(rl.GetScreenHeight())/2-300, 20, rl.RayWhite)
 	rl.DrawText("[Tab] pour ouvrir l'inventaire", int32(rl.GetScreenWidth())/2-rl.MeasureText("[Tab] pour ouvrir l'inventaire", 20)/2, int32(rl.GetScreenHeight())/2-250, 20, rl.RayWhite)
-
+	if rl.IsCursorOnScreen(){	
+		rl.HideCursor()
+	}
 }
 
 func (e *Engine) PauseRendering() {
@@ -48,7 +50,7 @@ func (e *Engine) PauseRendering() {
 
 }
 func (e *Engine) InventoryRendering() {
-	rl.ClearBackground(rl.Purple)
+	rl.ClearBackground(rl.Blue)
 
 	rl.DrawText("C'est l'inventaire ça", int32(rl.GetScreenWidth())/2-rl.MeasureText("C'est l'inventaire ça", 20)/2, int32(rl.GetScreenHeight())/2, 20, rl.RayWhite)
 	//JE TESTE L'OVERTURE DE L'INVENTAIRE
@@ -56,7 +58,7 @@ func (e *Engine) InventoryRendering() {
 
 func (e *Engine) SettingsRendering() {
 	rl.ClearBackground(rl.Yellow)
-	
+
 	rl.DrawText("Paramètre", int32(rl.GetScreenWidth())/2-rl.MeasureText("Paramètre", 20)/2, int32(rl.GetScreenHeight())/2, 20, rl.RayWhite)
 	//JE TESTE L'OVERTURE DE L'INVENTAIRE
 }
