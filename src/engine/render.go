@@ -29,6 +29,7 @@ func (e *Engine) InGameRendering() {
 
 	e.RenderMonsters()
 	e.RenderPlayer()
+	e.RenderShoper()
 
 	rl.EndMode2D() // On finit le rendu camera
 
@@ -75,6 +76,18 @@ func (e *Engine) RenderPlayer() {
 		e.Player.Sprite,
 		rl.NewRectangle(0, 0, 100, 100),
 		rl.NewRectangle(e.Player.Position.X, e.Player.Position.Y, 150, 150),
+		rl.Vector2{X: 0, Y: 0},
+		0,
+		rl.White,
+	)
+
+}
+
+func (e *Engine) RenderShoper() {
+	rl.DrawTexturePro(
+		e.Player.Sprite,
+		rl.NewRectangle(0, 0, 100, 100),
+		rl.NewRectangle(e.Shoper.Position.X, e.Shoper.Position.Y, 150, 150),
 		rl.Vector2{X: 0, Y: 0},
 		0,
 		rl.White,
