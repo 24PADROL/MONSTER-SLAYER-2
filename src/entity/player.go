@@ -8,7 +8,6 @@ import (
 )
 
 type Player struct {
-
 	Position  rl.Vector2
 	Health    int 
 	Money     int
@@ -21,7 +20,7 @@ type Player struct {
 }
 
 func (p *Player) Attack(m *Monster) {
-	m.Health -= 1
+	m.Health -= 3
 }
 
 func (p *Player) ToString() {

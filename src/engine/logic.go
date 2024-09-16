@@ -2,6 +2,7 @@ package engine
 
 import (
 	"main/src/entity"
+	"main/src/fight"
 
 	rl "github.com/gen2brain/raylib-go/raylib"
 )
@@ -60,7 +61,7 @@ func (e *Engine) InGameLogic() {
 	if rl.IsKeyDown(rl.KeyD) || rl.IsKeyDown(rl.KeyRight) {
 		e.Player.Position.X += e.Player.Speed
 	}
-	if rl.IsKeyPressed(rl.KeyTab){
+	if rl.IsKeyPressed(rl.KeyTab) {
 		e.StateEngine = INVENTORY
 	}
 
@@ -100,10 +101,11 @@ func (e *Engine) MonsterCollisions() {
 				e.NormalTalk(monster, "Bonjour")
 				if rl.IsKeyPressed(rl.KeyE) {
 					//lancer un combat ?
+					fight.Fight(e.Player, monster)
 				}
 			}
 		} else {
-			//...
+			e.NormalTalk(monster, "Ne tapproche pas heretique ")
 		}
 	}
 }
