@@ -41,3 +41,4 @@ func Fight(player entity.Player, monster entity.Monster) {
 		}
 	}
 }
+//YOOOOO
