@@ -10,7 +10,7 @@ import (
 type Player struct {
 
 	Position  rl.Vector2
-	Health    int
+	Health    int 
 	Money     int
 	Speed     float32
 	Inventory []item.Item

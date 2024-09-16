@@ -8,8 +8,8 @@ import (
 )
 
 const (
-	ScreenWidth  = 1400
-	ScreenHeight = 800
+	ScreenWidth  = 1800
+	ScreenHeight = 1000
 )
 
 func (e *Engine) Init() {
@@ -54,7 +54,7 @@ func (e *Engine) InitEntities() {
 		Sprite:   rl.LoadTexture("textures/entities/orc/Orc-Idle.png"),
 	})
 
-	e.Player.Money = 12
+	e.Player.Money = 120
 }
 
 func (e *Engine) InitCamera() {
@@ -69,7 +69,7 @@ func (e *Engine) InitCamera() {
 func (e *Engine) InitMusic() {
 	rl.InitAudioDevice()
 
-	e.Music = rl.LoadMusicStream("sounds/music/OSC-Ambient-Time-08-Egress.mp3")
+	e.Music = rl.LoadMusicStream("sounds/music/Hello.mp3")
 
 	rl.PlayMusicStream(e.Music)
 }
