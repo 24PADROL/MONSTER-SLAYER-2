@@ -84,6 +84,17 @@ func (e *Engine) RenderPlayer() {
 	)
 
 }
+func (e *Engine) RenderShoper() {
+
+	rl.DrawTexturePro(
+		e.Player.Sprite,
+		rl.NewRectangle(0, 0, 100, 100),
+		rl.NewRectangle(e.Player.Position.X, e.Player.Position.Y, 150, 150),
+		rl.Vector2{X: 0, Y: 0},
+		0,
+		rl.White,
+	)
+}
 
 func (e *Engine) RenderMonsters() {
 	for _, monster := range e.Monsters {
