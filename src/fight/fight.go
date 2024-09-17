@@ -38,8 +38,7 @@ func Fight(player entity.Player, monster entity.Monster) {
 
 			player.ToString()
 			monster.ToString()
-
+			
 		}
 	}
 }
-//YOOOOO
