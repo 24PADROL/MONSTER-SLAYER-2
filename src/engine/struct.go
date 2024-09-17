@@ -22,6 +22,7 @@ const (
 	INVENTORY engine = iota
 	GAMEOVER engine = iota
 	FIGHT 	engine = iota
+	ChaseDistance = 100
 )
 
 type Engine struct {

@@ -2,6 +2,7 @@ package engine
 
 import (
 	"main/src/entity"
+	// "main/src/fight"
 	//"main/src/fight"
 
 	rl "github.com/gen2brain/raylib-go/raylib"
@@ -53,6 +54,7 @@ func (e *Engine) OverLogic() {
 }
 
 func (e *Engine) FightLogic() { //[ 0, 5, 8, 6] [ 0, 8, 6]
+
 	if e.Player.Health <= 0 {
 		e.Player.IsAlive = false
 		e.Player.Money /= 2
@@ -73,10 +75,27 @@ func (e *Engine) FightLogic() { //[ 0, 5, 8, 6] [ 0, 8, 6]
 
 		
 
-		e.Player.ToString()
-		e.Fight.CurrentMonster.ToString()
+		// e.Player.ToString()
+		// e.Fight.CurrentMonster.ToString()
 		
 	}
+
+	// fight.Fight()
+}
+
+func (e *Engine) TrackMonsterLogic(){
+    for i := 0; i < len(e.Monsters); i++ { 
+
+        if e.Monsters[i].IsAlive {
+            distance := rl.Vector2Distance(e.Player.Position, e.Monsters[i].Position)
+
+            if distance <= ChaseDistance {
+                direction := rl.Vector2Subtract(e.Player.Position, e.Monsters[i].Position)
+                direction = rl.Vector2Normalize(direction)
+                e.Monsters[i].Position = rl.Vector2Add(e.Monsters[i].Position, direction)
+            }
+        }
+    }
 }
 func (e *Engine) InGameLogic() {
 	// Mouvement
@@ -118,6 +137,7 @@ func (e *Engine) InGameLogic() {
 func (e *Engine) CheckCollisions() {
 
 	e.MonsterCollisions()
+	e.TrackMonsterLogic()
 }
 
 func (e *Engine) MonsterCollisions() {
