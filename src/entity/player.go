@@ -32,4 +32,3 @@ func (p *Player) ToString() {
 	
 	\n`, p.Health, p.Money, p.Inventory)
 }
-//TEST

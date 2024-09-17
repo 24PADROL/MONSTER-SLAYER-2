@@ -15,6 +15,7 @@ const (
 )
 
 func Fight(player entity.Player, monster entity.Monster) {
+	
 
 	for { // Boucle infinie
 		// Check si le joueur ou le monstre est vaincu. Si c'est le cas, on sort de la boucle
@@ -38,8 +39,7 @@ func Fight(player entity.Player, monster entity.Monster) {
 
 			player.ToString()
 			monster.ToString()
-
+			
 		}
 	}
 }
-//YOOOOO

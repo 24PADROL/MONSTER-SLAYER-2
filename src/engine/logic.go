@@ -96,6 +96,7 @@ func (e *Engine) MonsterCollisions() {
 			monster.Position.X < e.Player.Position.X+20 &&
 			monster.Position.Y > e.Player.Position.Y-20 &&
 			monster.Position.Y < e.Player.Position.Y+20 {
+				e.StateEngine = FIGHT
 
 			if monster.Name == "Yann" {
 				if rl.IsKeyDown(rl.KeyE) {
@@ -105,7 +106,7 @@ func (e *Engine) MonsterCollisions() {
 				}
 			}
 		} else {
-			e.NormalTalk(monster, "Ne tapproche pas heretique ")
+			e.NormalTalk(monster, "Vas-y viens")
 		}
 	}
 }
