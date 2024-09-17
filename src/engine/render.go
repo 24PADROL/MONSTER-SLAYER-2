@@ -13,7 +13,7 @@ func (e *Engine) Rendering() {
 
 func (e *Engine) HomeRendering() {
 	rl.ClearBackground(rl.Blue)
-	rl.DrawTexture(rl.LoadTexture("textures/menu/menu.jpg"), 0 , 0, rl.White)
+	rl.DrawTexture(e.LoadingScreen, 0 , 0, rl.White)
 
 	rl.DrawText("Home Menu", int32(rl.GetScreenWidth())/2-rl.MeasureText("Home Menu", 40)/2, int32(rl.GetScreenHeight())/2-150, 40, rl.RayWhite)
 	rl.DrawText("[Enter] to Play", int32(rl.GetScreenWidth())/2-rl.MeasureText("[Enter] to Play", 20)/2, int32(rl.GetScreenHeight())/2, 20, rl.RayWhite)
@@ -64,7 +64,7 @@ func (e *Engine) InventoryRendering() {
 	//JE TESTE L'OVERTURE DE L'INVENTAIRE
 }
 func (e *Engine) FightRendering() {
-	rl.DrawTexture(rl.LoadTexture("textures/menu/FondCombat.jpeg"), 0 , 0, rl.White)
+	rl.DrawTexture(e.LoadingScreenCombat, 0 , 0, rl.White)
 	rl.DrawTexturePro(
 		e.Player.Sprite,
 		rl.NewRectangle(0, 0, 100, 100),
@@ -83,6 +83,7 @@ func (e *Engine) FightRendering() {
 			rl.White,
 		)
 	}
+	rl.DrawText("COMBAT !!", int32(rl.GetScreenWidth())/2-rl.MeasureText("COMBAT !!", 40)/2, int32(rl.GetScreenHeight())/2-150, 40, rl.RayWhite)
 }
 
 func (e *Engine) OverRendering() {

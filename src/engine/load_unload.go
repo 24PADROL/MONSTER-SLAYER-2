@@ -7,6 +7,8 @@ import (
 func (e *Engine) Load() {
 	// Chargement des textures du personnage
 	e.Player.Sprite = rl.LoadTexture("textures/entities/soldier/Soldier-Idle.png")
+	e.LoadingScreen = rl.LoadTexture("textures/menu/menu.jpg")
+	e.LoadingScreenCombat = rl.LoadTexture("textures/menu/FondCombat.jpeg")
 }
 
 func (e *Engine) Unload() {
