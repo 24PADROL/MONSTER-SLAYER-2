@@ -98,8 +98,8 @@ func (e *Engine) MonsterCollisions() {
 			monster.Position.Y < e.Player.Position.Y+20 {
 
 			if monster.Name == "Yann" {
-				e.NormalTalk(monster, "RWAAAAAAAAAAH")
-				if rl.IsKeyPressed(rl.KeyE) {
+				if rl.IsKeyDown(rl.KeyE) {
+					e.NormalTalk(monster, "RWAAAAAAAAAAH")
 					//lancer un combat ?
 					fight.Fight(e.Player, monster)
 				}
