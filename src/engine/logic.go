@@ -106,7 +106,7 @@ func (e *Engine) MonsterCollisions() {
 				}
 			}
 		} else {
-			e.NormalTalk(monster, "Ne tapproche pas heretique ")
+			e.NormalTalk(monster, "Vas-y viens")
 		}
 	}
 }

@@ -88,7 +88,7 @@ func (e *Engine) RenderShoper() {
 
 	rl.DrawTexturePro(
 		e.Player.Sprite,
-		rl.NewRectangle(0, 0, 100, 100),
+		rl.NewRectangle(0, 0, 200, 200),
 		rl.NewRectangle(e.Shoper.Position.X, e.Shoper.Position.Y, 250, 250),
 		rl.Vector2{X: 0, Y: 0},
 		0,
