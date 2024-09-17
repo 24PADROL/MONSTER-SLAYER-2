@@ -20,6 +20,7 @@ func Fight(player entity.Player, monster entity.Monster) {
 		// Check si le joueur ou le monstre est vaincu. Si c'est le cas, on sort de la boucle
 		if player.Health <= 0 {
 			player.IsAlive = false
+			player.Money /= 2
 			break
 		} else if monster.Health <= 0 {
 			player.Inventory = append(player.Inventory, monster.Loot...)
