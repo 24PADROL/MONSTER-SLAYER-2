@@ -8,8 +8,8 @@ import (
 )
 
 const (
-	ScreenWidth  = 1800
-	ScreenHeight = 1000
+	ScreenWidth  = 1400
+	ScreenHeight = 800
 )
 
 func (e *Engine) Init() {
