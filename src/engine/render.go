@@ -13,6 +13,8 @@ func (e *Engine) Rendering() {
 
 func (e *Engine) HomeRendering() {
 	rl.ClearBackground(rl.Blue)
+	rl.DrawTexture(rl.LoadTexture("textures/menu/menu.jpg"), 0 , 0, rl.White)
+
 	rl.DrawText("Home Menu", int32(rl.GetScreenWidth())/2-rl.MeasureText("Home Menu", 40)/2, int32(rl.GetScreenHeight())/2-150, 40, rl.RayWhite)
 	rl.DrawText("[Enter] to Play", int32(rl.GetScreenWidth())/2-rl.MeasureText("[Enter] to Play", 20)/2, int32(rl.GetScreenHeight())/2, 20, rl.RayWhite)
 	rl.DrawText("[Esc] to Quit", int32(rl.GetScreenWidth())/2-rl.MeasureText("[Esc] to Quit", 20)/2, int32(rl.GetScreenHeight())/2+100, 20, rl.RayWhite)
@@ -62,9 +64,25 @@ func (e *Engine) InventoryRendering() {
 	//JE TESTE L'OVERTURE DE L'INVENTAIRE
 }
 func (e *Engine) FightRendering() {
-	rl.ClearBackground(rl.Red)
-	e.RenderPlayer()
-
+	rl.DrawTexture(rl.LoadTexture("textures/menu/FondCombat.jpeg"), 0 , 0, rl.White)
+	rl.DrawTexturePro(
+		e.Player.Sprite,
+		rl.NewRectangle(0, 0, 100, 100),
+		rl.NewRectangle(e.Player.Position.X-500, e.Player.Position.Y-400, 1000, 1000),
+		rl.Vector2{X: 0, Y: 0},
+		0,
+		rl.White,
+	)
+	for _, monster := range e.Monsters {
+		rl.DrawTexturePro(
+			monster.Sprite,
+			rl.NewRectangle(0, 0, 100, 100),
+			rl.NewRectangle(monster.Position.X, monster.Position.Y-400, 1000, 1000),
+			rl.Vector2{X: 0, Y: 0},
+			0,
+			rl.White,
+		)
+	}
 }
 
 func (e *Engine) OverRendering() {
@@ -89,6 +107,7 @@ func (e *Engine) RenderPlayer() {
 		0,
 		rl.White,
 	)
+	
 
 }
 func (e *Engine) RenderShoper() {
