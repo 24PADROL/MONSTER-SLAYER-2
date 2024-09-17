@@ -61,6 +61,9 @@ func (e *Engine) InventoryRendering() {
 	rl.DrawText("C'est l'inventaire ça", int32(rl.GetScreenWidth())/2-rl.MeasureText("C'est l'inventaire ça", 20)/2, int32(rl.GetScreenHeight())/2, 20, rl.RayWhite)
 	//JE TESTE L'OVERTURE DE L'INVENTAIRE
 }
+func (e *Engine) FightRendering() {
+	
+}
 
 func (e *Engine) SettingsRendering() {
 	rl.ClearBackground(rl.Yellow)

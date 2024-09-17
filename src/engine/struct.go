@@ -21,6 +21,7 @@ const (
 	PAUSE    engine = iota
 	INVENTORY engine = iota
 	GAMEOVER engine = iota
+	FIGHT 	engine = iota
 )
 
 type Engine struct {
