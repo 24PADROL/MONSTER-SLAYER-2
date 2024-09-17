@@ -33,9 +33,14 @@ func (engine *Engine) Run() {
 			case INVENTORY:
 				engine.InventoryRendering()
 				engine.InventoryLogic()
+			
+			case FIGHT:
+				engine.FightRendering()
+				engine.FightLogic()
 
 			case GAMEOVER:
-				//...
+				engine.OverRendering()
+				engine.OverLogic()
 			}
 		}
 

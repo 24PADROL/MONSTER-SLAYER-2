@@ -31,11 +31,10 @@ func Fight(player entity.Player, monster entity.Monster) {
 		} else {
 			fmt.Println("----------------COMBAT-------------------")
 
-			if rl.IsKeyDown(rl.KeyE) {
+			if rl.IsKeyPressed(rl.KeyE) {
 				player.Attack(&monster)
+				monster.Attack(&player)
 			}
-
-			monster.Attack(&player)
 
 			player.ToString()
 			monster.ToString()

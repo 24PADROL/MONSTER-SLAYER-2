@@ -28,7 +28,8 @@ type Engine struct {
 	Player   entity.Player
 	Monsters []entity.Monster
 	Shoper  entity.Shoper
-
+	Fight Fight
+	
 	Music       rl.Music
 	MusicVolume float32
 
@@ -42,3 +43,9 @@ type Engine struct {
 	StateMenu   menu
 	StateEngine engine
 }
+
+type Fight struct {
+	CurrentMonster entity.Monster
+	CurrentPlayer entity.Player
+}
+

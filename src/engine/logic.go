@@ -2,7 +2,7 @@ package engine
 
 import (
 	"main/src/entity"
-	"main/src/fight"
+	//"main/src/fight"
 
 	rl "github.com/gen2brain/raylib-go/raylib"
 )
@@ -46,7 +46,37 @@ func (e *Engine) InventoryLogic() {
 		e.StateEngine = INGAME
 	}
 }
+func (e *Engine) OverLogic() {
+	if e.Player.Health <= 0{
+		e.StateEngine = GAMEOVER
+	}
+}
 
+func (e *Engine) FightLogic() {
+	if e.Player.Health <= 0 {
+		e.Player.IsAlive = false
+		e.Player.Money /= 2
+		e.StateEngine = GAMEOVER
+	} else if e.Fight.CurrentMonster.Health <= 0 {
+		e.Fight.CurrentPlayer.Inventory = append(e.Fight.CurrentPlayer.Inventory, e.Fight.CurrentMonster.Loot...)
+		e.Fight.CurrentPlayer.Money += e.Fight.CurrentMonster.Worth
+		// fmt.Println("----------------DEAD-------------------")
+		e.StateMenu = PLAY
+		e.StateEngine = INGAME
+	} else {
+		// fmt.Println("----------------COMBAT-------------------")
+		if rl.IsKeyPressed(rl.KeyE) {
+			e.Fight.CurrentPlayer.Attack(&e.Fight.CurrentMonster)
+			e.Fight.CurrentMonster.Attack(&e.Player)
+		}
+
+		
+
+		e.Fight.CurrentPlayer.ToString()
+		e.Fight.CurrentMonster.ToString()
+		
+	}
+}
 func (e *Engine) InGameLogic() {
 	// Mouvement
 	if rl.IsKeyDown(rl.KeyW) || rl.IsKeyDown(rl.KeyUp) {
@@ -91,20 +121,23 @@ func (e *Engine) CheckCollisions() {
 
 func (e *Engine) MonsterCollisions() {
 
-	for _, monster := range e.Monsters {
+	for i, monster := range e.Monsters {
 		if monster.Position.X > e.Player.Position.X-20 &&
 			monster.Position.X < e.Player.Position.X+20 &&
 			monster.Position.Y > e.Player.Position.Y-20 &&
 			monster.Position.Y < e.Player.Position.Y+20 {
-				//e.StateEngine = FIGHT
 
-			if monster.Name == "Yann" {
-				if rl.IsKeyDown(rl.KeyE) {
-					e.NormalTalk(monster, "RWAAAAAAAAAAH")
-					//lancer un combat ?
-					fight.Fight(e.Player, monster)
+				e.Fight.CurrentMonster = e.Monsters[i]
+
+				e.StateEngine = FIGHT
+				//e.CurrentMonster = e.Monsters[i]
+
+				if monster.Name == "Yann" {
+					if rl.IsKeyDown(rl.KeyE) {
+						e.NormalTalk(monster, "RWAAAAAAAAAAH")
+						//lancer un combat ?
+					}
 				}
-			}
 		} else {
 			e.NormalTalk(monster, "Vas-y viens")
 		}
