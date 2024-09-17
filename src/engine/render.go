@@ -29,7 +29,6 @@ func (e *Engine) InGameRendering() {
 
 	e.RenderMonsters()
 	e.RenderPlayer()
-	e.RenderShoper()
 
 	rl.EndMode2D() // On finit le rendu camera
 
@@ -57,7 +56,7 @@ func (e *Engine) PauseRendering() {
 
 }
 func (e *Engine) InventoryRendering() {
-	rl.DrawRectangle( 10 , 10 , 400 , 800, rl.Blue)
+	rl.ClearBackground(rl.Blue)
 
 	rl.DrawText("C'est l'inventaire ça", int32(rl.GetScreenWidth())/2-rl.MeasureText("C'est l'inventaire ça", 20)/2, int32(rl.GetScreenHeight())/2, 20, rl.RayWhite)
 	//JE TESTE L'OVERTURE DE L'INVENTAIRE
@@ -76,18 +75,6 @@ func (e *Engine) RenderPlayer() {
 		e.Player.Sprite,
 		rl.NewRectangle(0, 0, 100, 100),
 		rl.NewRectangle(e.Player.Position.X, e.Player.Position.Y, 150, 150),
-		rl.Vector2{X: 0, Y: 0},
-		0,
-		rl.White,
-	)
-
-}
-
-func (e *Engine) RenderShoper() {
-	rl.DrawTexturePro(
-		e.Player.Sprite,
-		rl.NewRectangle(0, 0, 100, 100),
-		rl.NewRectangle(e.Shoper.Position.X, e.Shoper.Position.Y, 150, 150),
 		rl.Vector2{X: 0, Y: 0},
 		0,
 		rl.White,
