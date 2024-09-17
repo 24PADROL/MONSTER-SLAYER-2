@@ -52,27 +52,28 @@ func (e *Engine) OverLogic() {
 	}
 }
 
-func (e *Engine) FightLogic() {
+func (e *Engine) FightLogic() { //[ 0, 5, 8, 6] [ 0, 8, 6]
 	if e.Player.Health <= 0 {
 		e.Player.IsAlive = false
 		e.Player.Money /= 2
 		e.StateEngine = GAMEOVER
 	} else if e.Fight.CurrentMonster.Health <= 0 {
-		e.Fight.CurrentPlayer.Inventory = append(e.Fight.CurrentPlayer.Inventory, e.Fight.CurrentMonster.Loot...)
-		e.Fight.CurrentPlayer.Money += e.Fight.CurrentMonster.Worth
-		// fmt.Println("----------------DEAD-------------------")
+		e.Monsters = append(e.Monsters[:e.Fight.CurrentMonsterIndex], e.Monsters[e.Fight.CurrentMonsterIndex+1:]...)
 		e.StateMenu = PLAY
 		e.StateEngine = INGAME
+		e.Player.Inventory = append(e.Player.Inventory, e.Fight.CurrentMonster.Loot...)
+		e.Player.Money += e.Fight.CurrentMonster.Worth
+		// fmt.Println("----------------DEAD-------------------")
 	} else {
 		// fmt.Println("----------------COMBAT-------------------")
 		if rl.IsKeyPressed(rl.KeyE) {
-			e.Fight.CurrentPlayer.Attack(&e.Fight.CurrentMonster)
+			e.Player.Attack(&e.Fight.CurrentMonster)
 			e.Fight.CurrentMonster.Attack(&e.Player)
 		}
 
 		
 
-		e.Fight.CurrentPlayer.ToString()
+		e.Player.ToString()
 		e.Fight.CurrentMonster.ToString()
 		
 	}
@@ -128,6 +129,7 @@ func (e *Engine) MonsterCollisions() {
 			monster.Position.Y < e.Player.Position.Y+20 {
 
 				e.Fight.CurrentMonster = e.Monsters[i]
+				e.Fight.CurrentMonsterIndex = i
 
 				e.StateEngine = FIGHT
 				//e.CurrentMonster = e.Monsters[i]

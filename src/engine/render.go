@@ -63,14 +63,7 @@ func (e *Engine) InventoryRendering() {
 }
 func (e *Engine) FightRendering() {
 	rl.ClearBackground(rl.Red)
-	rl.DrawTexturePro(
-		e.Player.Sprite,
-		rl.NewRectangle(0, 0, 100, 100),
-		rl.NewRectangle(e.Player.Position.X, e.Player.Position.Y, 150, 150),
-		rl.Vector2{X: 0, Y: 0},
-		0,
-		rl.White,
-	)
+	e.RenderPlayer()
 
 }
 
