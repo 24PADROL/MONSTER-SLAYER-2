@@ -15,6 +15,7 @@ type Monster struct {
 	Speed	float32
 	Loot     []item.Item
 	Worth    int //valeur en argent quand tué
+	Index	int
 
 	IsAlive bool
 

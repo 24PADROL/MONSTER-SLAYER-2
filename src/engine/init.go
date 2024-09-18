@@ -62,7 +62,7 @@ func (e *Engine) InitEntities() {
 		Damage:   5,
 		Loot:     []item.Item{},
 		Worth:    12,
-
+		Index:    len(e.Monsters),
 		IsAlive:  true,
 		Sprite:   rl.LoadTexture("textures/entities/orc/Orc-Idle.png"),
 	})
