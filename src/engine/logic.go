@@ -123,10 +123,10 @@ func (e *Engine) TrackMonsterLogic() {
 
 func (e *Engine) CoffreCollisions() {
 	for _, Coffre := range e.Coffre {
-		if Coffre.Position.X > e.Player.Position.X-20 &&
-			Coffre.Position.X < e.Player.Position.X+20 &&
-			Coffre.Position.Y > e.Player.Position.Y-20 &&
-			Coffre.Position.Y < e.Player.Position.Y+20 {
+		if Coffre.Position.X > e.Player.Position.X-30 &&
+			Coffre.Position.X < e.Player.Position.X+10 &&
+			Coffre.Position.Y > e.Player.Position.Y-30 &&
+			Coffre.Position.Y < e.Player.Position.Y+10 {
 			if Coffre.Name == "Potion" {
 				if rl.IsKeyDown(rl.KeyE) {
 					e.StateEngine = COFFRE
@@ -137,10 +137,10 @@ func (e *Engine) CoffreCollisions() {
 }
 
 func (e *Engine) CoffreLogic() {
-	if rl.IsKeyDown(rl.KeyE){
-		e.StateMenu = PLAY
-		e.StateEngine = INGAME
-	}
+// 	if rl.IsKeyDown(rl.KeyE){
+// 		e.StateMenu = PLAY
+// 		e.StateEngine = INGAME
+// 	}
 }
 
 func (e *Engine) InGameLogic() {
@@ -183,6 +183,7 @@ func (e *Engine) CheckCollisions() {
 
 	e.MonsterCollisions()
 	e.TrackMonsterLogic()
+	e.CoffreCollisions()
 
 }
 

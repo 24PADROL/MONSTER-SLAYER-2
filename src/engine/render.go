@@ -31,6 +31,7 @@ func (e *Engine) InGameRendering() {
 
 	e.RenderMonsters()
 	e.RenderPlayer()
+	e.RenderCoffre()
 
 	rl.EndMode2D() // On finit le rendu camera
 
@@ -93,9 +94,11 @@ func (e *Engine) OverRendering() {
 }
 
 func (e *Engine) CoffreRendering() {
+	
 	rl.ClearBackground(rl.Pink)
 	rl.DrawText("Le coffre est vide pour l'instant tkt ça arrive", int32(rl.GetScreenWidth())/2-rl.MeasureText("Le coffre est vide pour l'instant tkt ça arrive", 20)/2, int32(rl.GetScreenHeight())/2, 20, rl.RayWhite)
 }
+
 
 func (e *Engine) SettingsRendering() {
 	rl.ClearBackground(rl.Yellow)
@@ -116,7 +119,6 @@ func (e *Engine) RenderPlayer() {
 		rl.White,
 	)
 	
-
 }
 func (e *Engine) RenderShoper() {
 
@@ -129,6 +131,19 @@ func (e *Engine) RenderShoper() {
 		rl.White,
 	)
 }
+func (e *Engine) RenderCoffre() {
+	for _, coffre := range e.Coffre {
+		rl.DrawTexturePro(
+			coffre.Sprite,
+			rl.NewRectangle(0, 0, 100, 100),
+			rl.NewRectangle(coffre.Position.X, coffre.Position.Y, 200, 200),
+			rl.Vector2{X: 0, Y: 0},
+			0,
+			rl.White,
+		)
+	}
+}
+
 
 func (e *Engine) RenderMonsters() {
 	for _, monster := range e.Monsters {
