@@ -158,6 +158,9 @@ func (e *Engine) RenderMonsters() {
 	}
 }
 
+func (e *Engine) RenderAnimationMonster(){
+}
+
 func (e *Engine) RenderDialog(m entity.Monster, sentence string) {
 	rl.BeginMode2D(e.Camera)
 

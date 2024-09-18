@@ -21,7 +21,6 @@ func (e *Engine) Battle() {
 	e.StateEngine = GAMEOVER
 } else if e.Fight.CurrentMonster.Health <= 0 {
 	e.Monsters = append(e.Monsters[:e.Fight.CurrentMonster.Index], e.Monsters[e.Fight.CurrentMonster.Index+1:]...)
-	// e.Monsters = append(e.Monsters[:e.Fight.CurrentMonsterIndex], e.Monsters[e.Fight.CurrentMonsterIndex+1:]...)
 	e.StateMenu = PLAY
 	e.StateEngine = INGAME
 	e.Player.Inventory = append(e.Player.Inventory, e.Fight.CurrentMonster.Loot...)

@@ -20,6 +20,40 @@ type Monster struct {
 	IsAlive bool
 
 	Sprite rl.Texture2D
+	Sprites []rl.Texture2D
+
+	IsAnimated  bool
+	FrameWidth  int
+	FrameHeight int
+	MaxFrames   int
+}
+
+var CurrentFrame int
+var FrameCount int
+var speed int= 5
+
+func (m Monster) UpdateAnimation() {
+	if FrameCount >= speed {
+		CurrentFrame++
+		FrameCount = 0
+	} else {
+		FrameCount++
+	}
+	if CurrentFrame >= m.MaxFrames {
+		CurrentFrame = 0
+	}
+}
+
+func (m *Monster) Draw() {
+	FrameRec := rl.Rectangle{
+		X: float32(m.FrameWidth + m.FrameWidth*CurrentFrame), Y: 0,
+		Width: float32(m.FrameWidth), Height: float32(m.FrameHeight),
+	}
+	position := rl.Rectangle{
+		X: m.Position.X + 20, Y: m.Position.Y + 10,
+		Width: float32(m.FrameWidth), Height: float32(m.FrameHeight),
+	}
+	rl.DrawTexturePro(m.Sprite, FrameRec, position, rl.Vector2{}, 0, rl.White)
 }
 
 func (m *Monster) Attack(p *Player) {

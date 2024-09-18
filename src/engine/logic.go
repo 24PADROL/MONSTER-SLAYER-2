@@ -120,6 +120,28 @@ func (e *Engine) TrackMonsterLogic() {
 	// fight.Fight()
 }
 
+func (e *Engine) CoffreCollisions() {
+	for _, Coffre := range e.Coffre {
+		if Coffre.Position.X > e.Player.Position.X-30 &&
+			Coffre.Position.X < e.Player.Position.X+10 &&
+			Coffre.Position.Y > e.Player.Position.Y-30 &&
+			Coffre.Position.Y < e.Player.Position.Y+10 {
+			if Coffre.Name == "Potion" {
+				if rl.IsKeyPressed(rl.KeyE) {
+					e.StateEngine = COFFRE
+				}
+			}
+		}
+	}
+}
+
+func (e *Engine) CoffreLogic() {
+	if rl.IsKeyPressed(rl.KeyE) {
+		e.StateMenu = PLAY
+		e.StateEngine = INGAME
+	}
+}
+
 func (e *Engine) InGameLogic() {
 	// Mouvement
 	if rl.IsKeyDown(rl.KeyW) || rl.IsKeyDown(rl.KeyUp) {
@@ -160,36 +182,37 @@ func (e *Engine) CheckCollisions() {
 
 	e.MonsterCollisions()
 	e.TrackMonsterLogic()
+	e.CoffreCollisions()
 }
 
-func (e *Engine) CheckCollisionsWithObjects() bool {
-	playerRectangle := rl.NewRectangle(e.Player.Position.X, e.Player.Position.Y, 40, 40)
-	// * 2 - 16
-	for _, obj := range e.Objects {
-		objectsRectangle := rl.NewRectangle(obj.X, obj.Y, obj.Width, obj.Height)
-		if rl.CheckCollision(playerRectangle, objectsRectangle) {
-			return true
-		}
-	}
-	return false
-}
+// func (e *Engine) CheckCollisionsWithObjects() bool {
+// 	playerRectangle := rl.NewRectangle(e.Player.Position.X, e.Player.Position.Y, 40, 40)
+// 	// * 2 - 16
+// 	for _, obj := range e.Objects {
+// 		objectsRectangle := rl.NewRectangle(obj.X, obj.Y, obj.Width, obj.Height)
+// 		if rl.CheckCollision(playerRectangle, objectsRectangle) {
+// 			return true
+// 		}
+// 	}
+// 	return false
+// }
 
-func (e *Engine) BlockCollisions() {
-	if e.CheckCollisionsWithObjects() {
-		if rl.IsKeyDown(rl.KeyW) || rl.IsKeyDown(rl.KeyUp) {
-			e.Player.Position.X += e.Player.Speed
-		}
-		if rl.IsKeyDown(rl.KeyS) || rl.IsKeyDown(rl.KeyDown) {
-			e.Player.Position.X -= e.Player.Speed
-		}
-		if rl.IsKeyDown(rl.KeyA) || rl.IsKeyDown(rl.KeyLeft) {
-			e.Player.Position.Y += e.Player.Speed
-		}
-		if rl.IsKeyDown(rl.KeyD) || rl.IsKeyDown(rl.KeyRight) {
-			e.Player.Position.Y -= e.Player.Speed
-		}
-	}
-}
+// func (e *Engine) BlockCollisions() {
+// 	if e.CheckCollisionsWithObjects() {
+// 		if rl.IsKeyDown(rl.KeyW) || rl.IsKeyDown(rl.KeyUp) {
+// 			e.Player.Position.X += e.Player.Speed
+// 		}
+// 		if rl.IsKeyDown(rl.KeyS) || rl.IsKeyDown(rl.KeyDown) {
+// 			e.Player.Position.X -= e.Player.Speed
+// 		}
+// 		if rl.IsKeyDown(rl.KeyA) || rl.IsKeyDown(rl.KeyLeft) {
+// 			e.Player.Position.Y += e.Player.Speed
+// 		}
+// 		if rl.IsKeyDown(rl.KeyD) || rl.IsKeyDown(rl.KeyRight) {
+// 			e.Player.Position.Y -= e.Player.Speed
+// 		}
+// 	}
+// }
 
 func (e *Engine) MonsterCollisions() {
 
