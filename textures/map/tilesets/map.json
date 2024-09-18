@@ -799,7 +799,7 @@
         {
          "columns":21,
          "firstgid":1,
-         "image":"32rogues-0.3.0\/32rogues\/tiles.png",
+         "image":"tiles.png",
          "imageheight":768,
          "imagewidth":672,
          "margin":0,
@@ -812,7 +812,7 @@
         {
          "columns":5,
          "firstgid":505,
-         "image":"32rogues-0.3.0\/32rogues\/rogues.png",
+         "image":"rogues.png",
          "imageheight":160,
          "imagewidth":160,
          "margin":0,
@@ -825,7 +825,7 @@
         {
          "columns":8,
          "firstgid":530,
-         "image":"32rogues-0.3.0\/32rogues\/items.png",
+         "image":"items.png",
          "imageheight":704,
          "imagewidth":256,
          "margin":0,
@@ -838,7 +838,7 @@
         {
          "columns":7,
          "firstgid":706,
-         "image":"32rogues-0.3.0\/32rogues\/monsters.png",
+         "image":"monsters.png",
          "imageheight":256,
          "imagewidth":224,
          "margin":0,
@@ -851,7 +851,7 @@
         {
          "columns":8,
          "firstgid":762,
-         "image":"Pixel Art Top Down - Basic\/Texture\/TX Tileset Grass.png",
+         "image":"TX Tileset Grass.png",
          "imageheight":256,
          "imagewidth":256,
          "margin":0,
@@ -864,7 +864,7 @@
         {
          "columns":16,
          "firstgid":826,
-         "image":"Pixel Art Top Down - Basic\/Texture\/TX Plant.png",
+         "image":"TX Plant.png",
          "imageheight":512,
          "imagewidth":512,
          "margin":0,
@@ -877,7 +877,7 @@
         {
          "columns":16,
          "firstgid":1082,
-         "image":"Pixel Art Top Down - Basic\/Texture\/TX Props.png",
+         "image":"TX Props.png",
          "imageheight":512,
          "imagewidth":512,
          "margin":0,
@@ -917,7 +917,7 @@
         {
          "columns":16,
          "firstgid":1338,
-         "image":"Pixel Art Top Down - Basic\/Texture\/TX Struct.png",
+         "image":"TX Struct.png",
          "imageheight":512,
          "imagewidth":512,
          "margin":0,
@@ -930,7 +930,7 @@
         {
          "columns":16,
          "firstgid":1594,
-         "image":"Pixel Art Top Down - Basic\/Texture\/TX Tileset Wall.png",
+         "image":"TX Tileset Wall.png",
          "imageheight":512,
          "imagewidth":512,
          "margin":0,
@@ -943,7 +943,7 @@
         {
          "columns":6,
          "firstgid":1850,
-         "image":"WoodenHouse-Pixel\/House.png",
+         "image":"House.png",
          "imageheight":182,
          "imagewidth":214,
          "margin":0,
@@ -956,7 +956,7 @@
         {
          "columns":5,
          "firstgid":1880,
-         "image":"Archive\/house1.png",
+         "image":"house1.png",
          "imageheight":228,
          "imagewidth":163,
          "margin":0,
@@ -969,7 +969,7 @@
         {
          "columns":4,
          "firstgid":1915,
-         "image":"Archive\/cit1.png",
+         "image":"cit1.png",
          "imageheight":132,
          "imagewidth":143,
          "margin":0,
@@ -982,7 +982,7 @@
         {
          "columns":3,
          "firstgid":1931,
-         "image":"craftpix-net-672461-free-swamp-game-tileset-pixel-art\/3 Objects\/Trees\/1.png",
+         "image":"1.png",
          "imageheight":103,
          "imagewidth":101,
          "margin":0,
@@ -995,7 +995,7 @@
         {
          "columns":3,
          "firstgid":1940,
-         "image":"craftpix-net-672461-free-swamp-game-tileset-pixel-art\/3 Objects\/Trees\/2.png",
+         "image":"2.png",
          "imageheight":132,
          "imagewidth":104,
          "margin":0,
@@ -1008,7 +1008,7 @@
         {
          "columns":3,
          "firstgid":1952,
-         "image":"craftpix-net-672461-free-swamp-game-tileset-pixel-art\/3 Objects\/Trees\/3.png",
+         "image":"3.png",
          "imageheight":150,
          "imagewidth":123,
          "margin":0,
