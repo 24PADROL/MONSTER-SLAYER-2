@@ -17,9 +17,9 @@ func (e *Engine) HomeRendering() {
 
 	rl.DrawText("MONSTER SLAYER", int32(rl.GetScreenWidth())/2-rl.MeasureText("MONSTER SLAYER", 40)/2, int32(rl.GetScreenHeight())/2-200, 40, rl.RayWhite)
 	rl.DrawText("2", int32(rl.GetScreenWidth())/2-rl.MeasureText("2", 40)/2, int32(rl.GetScreenHeight())/2-150, 40, rl.RayWhite)
-	rl.DrawText("[Enter] to Play", int32(rl.GetScreenWidth())/2-rl.MeasureText("[Enter] to Play", 20)/2, int32(rl.GetScreenHeight())/2, 20, rl.RayWhite)
-	rl.DrawText("[Esc] to Quit", int32(rl.GetScreenWidth())/2-rl.MeasureText("[Esc] to Quit", 20)/2, int32(rl.GetScreenHeight())/2+100, 20, rl.RayWhite)
-	rl.DrawText("[G] to go to Settings", int32(rl.GetScreenWidth())/2-rl.MeasureText("[G] to go to Settings", 20)/2, int32(rl.GetScreenHeight())/2+200, 20, rl.RayWhite)
+	rl.DrawText("[Enter] JOUER", int32(rl.GetScreenWidth())/2-rl.MeasureText("[Enter] JOUER", 20)/2, int32(rl.GetScreenHeight())/2, 20, rl.RayWhite)
+	rl.DrawText("[Esc] QUITTER", int32(rl.GetScreenWidth())/2-rl.MeasureText("[Esc] QUITTER", 20)/2, int32(rl.GetScreenHeight())/2+100, 20, rl.RayWhite)
+	rl.DrawText("[G] PARAMÈTRE", int32(rl.GetScreenWidth())/2-rl.MeasureText("[G] PARAMÈTRE", 20)/2, int32(rl.GetScreenHeight())/2+200, 20, rl.RayWhite)
 	//Les settings marche pas alors qu'avant ça marchait
 }
 
@@ -33,6 +33,7 @@ func (e *Engine) InGameRendering() {
 	e.RenderMonsters()
 	e.RenderPlayer()
 	e.RenderCoffre()
+	// e.RenderShop()
 
 	rl.EndMode2D() // On finit le rendu camera
 
@@ -52,11 +53,12 @@ func (e *Engine) InGameRendering() {
 }
 
 func (e *Engine) PauseRendering() {
+	rl.DrawTexture(e.LoadingScreenPause, 0 , 0, rl.White)
 	rl.ClearBackground(rl.Red)
 
 	rl.DrawText("Pause", int32(rl.GetScreenWidth())/2-rl.MeasureText("Paused", 40)/2, int32(rl.GetScreenHeight())/2-150, 40, rl.RayWhite)
 	rl.DrawText("[P] ou [Esc] pour continuer", int32(rl.GetScreenWidth())/2-rl.MeasureText("[P] ou [Esc] pour continuer", 20)/2, int32(rl.GetScreenHeight())/2, 20, rl.RayWhite)
-	rl.DrawText("[Q]/[A] pour quitter", int32(rl.GetScreenWidth())/2-rl.MeasureText("[Esc] pour quitter", 20)/2, int32(rl.GetScreenHeight())/2+100, 20, rl.RayWhite)
+	rl.DrawText("[Q] pour quitter", int32(rl.GetScreenWidth())/2-rl.MeasureText("[Esc] pour quitter", 20)/2, int32(rl.GetScreenHeight())/2+100, 20, rl.RayWhite)
 
 }
 func (e *Engine) InventoryRendering() {
@@ -91,6 +93,7 @@ func (e *Engine) FightRendering() {
 
 func (e *Engine) OverRendering() {
 	rl.ClearBackground(rl.DarkGray)
+	rl.DrawTexture(e.LoadingScreenGameOver, 0 , 0, rl.White)
 	rl.DrawText("GAMEOVER HAHA ÇA MARCHE", int32(rl.GetScreenWidth())/2-rl.MeasureText("GAMEOVER HAHA ÇA MARCHE", 20)/2, int32(rl.GetScreenHeight())/2, 20, rl.RayWhite)
 }
 
@@ -109,6 +112,12 @@ func (e *Engine) SettingsRendering() {
 	//JE TESTE L'OVERTURE DE L'INVENTAIRE
 }
 
+func (e *Engine) ShopRendering(){
+	
+	rl.ClearBackground(rl.Green)
+	rl.DrawText("Le Shop est vide pour l'instant tkt ça arrive", int32(rl.GetScreenWidth())/2-rl.MeasureText("Le Shop est vide pour l'instant tkt ça arrive", 20)/2, int32(rl.GetScreenHeight())/2, 20, rl.RayWhite)
+}
+
 func (e *Engine) RenderPlayer() {
 
 	rl.DrawTexturePro(
@@ -121,17 +130,19 @@ func (e *Engine) RenderPlayer() {
 	)
 	
 }
-func (e *Engine) RenderShoper() {
 
-	rl.DrawTexturePro(
-		e.Player.Sprite,
-		rl.NewRectangle(0, 0, 200, 200),
-		rl.NewRectangle(e.Shoper.Position.X, e.Shoper.Position.Y, 250, 250),
-		rl.Vector2{X: 0, Y: 0},
-		0,
-		rl.White,
-	)
-}
+// func (e *Engine) RenderShop() {
+
+// 	rl.DrawTexturePro(
+// 		Shop.Sprite,
+// 		rl.NewRectangle(0, 0, 100, 100),
+// 		rl.NewRectangle(Shop.Position.X, Shop.Position.Y, 200, 200),
+// 		rl.Vector2{X: 0, Y: 0},
+// 		0,
+// 		rl.White,
+// 	)
+// }
+
 func (e *Engine) RenderCoffre() {
 	for _, coffre := range e.Coffre {
 		rl.DrawTexturePro(

@@ -23,6 +23,7 @@ const (
 	GAMEOVER engine = iota
 	FIGHT 	engine = iota
 	COFFRE engine = iota
+	SHOP engine = iota
 	ChaseDistance = 100
 
 )
@@ -30,7 +31,7 @@ const (
 type Engine struct {
 	Player   entity.Player
 	Monsters []entity.Monster
-	Shoper  entity.Shoper
+	Shop  []entity.Shop
 	Coffre	[]entity.Coffre
 	Fight Fight
 	
@@ -45,6 +46,8 @@ type Engine struct {
 
 	LoadingScreen rl.Texture2D
 	LoadingScreenCombat rl.Texture2D
+	LoadingScreenGameOver rl.Texture2D
+	LoadingScreenPause rl.Texture2D
 
 	IsRunning   bool
 	StateMenu   menu

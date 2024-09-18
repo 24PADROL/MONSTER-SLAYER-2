@@ -9,6 +9,8 @@ func (e *Engine) Load() {
 	e.Player.Sprite = rl.LoadTexture("textures/entities/soldier/Soldier-Idle.png")
 	e.LoadingScreen = rl.LoadTexture("textures/menu/Grotte.jpg")
 	e.LoadingScreenCombat = rl.LoadTexture("textures/menu/FondCombat.jpeg")
+	e.LoadingScreenGameOver = rl.LoadTexture("textures/menu/MortSceen.jpg")
+	e.LoadingScreenPause = rl.LoadTexture("textures/menu/PauseMenu.jpg")
 }
 
 func (e *Engine) Unload() {
