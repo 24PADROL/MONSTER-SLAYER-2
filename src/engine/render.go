@@ -68,7 +68,7 @@ func (e *Engine) FightRendering() {
 	rl.DrawTexturePro(
 		e.Player.Sprite,
 		rl.NewRectangle(0, 0, 100, 100),
-		rl.NewRectangle(e.Player.Position.X-500, e.Player.Position.Y-400, 1000, 1000),
+		rl.NewRectangle(100, 100, 500, 500),
 		rl.Vector2{X: 0, Y: 0},
 		0,
 		rl.White,
@@ -77,12 +77,13 @@ func (e *Engine) FightRendering() {
 		rl.DrawTexturePro(
 			monster.Sprite,
 			rl.NewRectangle(0, 0, 100, 100),
-			rl.NewRectangle(monster.Position.X, monster.Position.Y-400, 1000, 1000),
+			rl.NewRectangle(750, 100, 500, 500),
 			rl.Vector2{X: 0, Y: 0},
 			0,
 			rl.White,
 		)
 	}
+	
 	rl.DrawText("COMBAT !!", int32(rl.GetScreenWidth())/2-rl.MeasureText("COMBAT !!", 40)/2, int32(rl.GetScreenHeight())/2-150, 40, rl.RayWhite)
 }
 
@@ -94,6 +95,7 @@ func (e *Engine) OverRendering() {
 func (e *Engine) SettingsRendering() {
 	rl.ClearBackground(rl.Yellow)
 
+	rl.DrawText("[Z] pour aller en haut", int32(rl.GetScreenWidth())/2-rl.MeasureText("[Z] pour aller vers le haut", 20)/2, int32(rl.GetScreenHeight())/2-150, 40, rl.RayWhite)
 	rl.DrawText("Paramètre", int32(rl.GetScreenWidth())/2-rl.MeasureText("Paramètre", 20)/2, int32(rl.GetScreenHeight())/2, 20, rl.RayWhite)
 	//JE TESTE L'OVERTURE DE L'INVENTAIRE
 }

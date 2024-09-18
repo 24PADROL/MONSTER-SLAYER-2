@@ -22,13 +22,16 @@ const (
 	INVENTORY engine = iota
 	GAMEOVER engine = iota
 	FIGHT 	engine = iota
+	COFFRE engine = iota
 	ChaseDistance = 100
+
 )
 
 type Engine struct {
 	Player   entity.Player
 	Monsters []entity.Monster
 	Shoper  entity.Shoper
+	Coffre	[]entity.Coffre
 	Fight Fight
 	
 	Music       rl.Music
@@ -51,4 +54,3 @@ type Engine struct {
 type Fight struct {
 	CurrentMonster entity.Monster
 }
-

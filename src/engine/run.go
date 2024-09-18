@@ -41,6 +41,7 @@ func (engine *Engine) Run() {
 			case GAMEOVER:
 				engine.OverRendering()
 				engine.OverLogic()
+			
 			}
 		}
 

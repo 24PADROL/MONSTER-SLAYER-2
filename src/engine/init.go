@@ -29,18 +29,14 @@ func (e *Engine) Init() {
 
 func (e *Engine) InitEntities() {
 
-	e.Shoper = entity.Shoper{
-		Name:     "Arnaud Shop",
+	e.Coffre = append(e.Coffre, entity.Coffre{
+		Name:     "Potion",
 		Position: rl.Vector2{X: 600, Y: 320},
-		Health:   20,
-		Damage:   5,
 		Loot:     []item.Item{},
-		Worth:    12,
 
-		IsAlive:  true,
 		Sprite:   rl.LoadTexture("textures/entities/orc/Orc-Idle.png"),
 		
-	}
+	})
 	
 
 	e.Player = entity.Player{

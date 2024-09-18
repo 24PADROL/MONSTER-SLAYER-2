@@ -3,12 +3,12 @@ package engine
 import (
 	"main/src/entity"
 	// "main/src/fight"
-	
 
 	//"main/src/fight"
 
 	rl "github.com/gen2brain/raylib-go/raylib"
 )
+
 func (e *Engine) HomeLogic() {
 
 	//Musique
@@ -37,6 +37,7 @@ func (e *Engine) HomeLogic() {
 func (e *Engine) SettingsLogic() {
 	//Menus
 	if rl.IsKeyPressed(rl.KeyG) {
+		// if StateEngine
 		e.StateMenu = HOME
 	}
 	//Musique
@@ -74,11 +75,9 @@ func (e *Engine) FightLogic() { //[ 0, 5, 8, 6] [ 0, 8, 6]
 	// 		e.Fight.CurrentMonster.Attack(&e.Player)
 	// 	}
 
-		
+	// e.Player.ToString()
+	// e.Fight.CurrentMonster.ToString()
 
-		// e.Player.ToString()
-		// e.Fight.CurrentMonster.ToString()
-		
 	// 	if e.Player.Health <= 0 {
 	// 		e.Player.IsAlive = false
 	// 		e.Player.Money /= 2
@@ -103,7 +102,7 @@ func (e *Engine) FightLogic() { //[ 0, 5, 8, 6] [ 0, 8, 6]
 	// 	}
 
 	e.Battle()
- }
+}
 
 func (e *Engine) TrackMonsterLogic() {
 	for i := 0; i < len(e.Monsters); i++ {
@@ -122,6 +121,20 @@ func (e *Engine) TrackMonsterLogic() {
 	// fight.Fight()
 }
 
+func (e *Engine) CoffreCollisions() {
+	for _, Coffre := range e.Coffre {
+		if Coffre.Position.X > e.Player.Position.X-20 &&
+			Coffre.Position.X < e.Player.Position.X+20 &&
+			Coffre.Position.Y > e.Player.Position.Y-20 &&
+			Coffre.Position.Y < e.Player.Position.Y+20 {
+			if Coffre.Name == "Potion" {
+				if rl.IsKeyDown(rl.KeyE) {
+					e.StateEngine = COFFRE
+				}
+			}
+		}
+	}
+}
 
 func (e *Engine) InGameLogic() {
 	// Mouvement
@@ -140,7 +153,6 @@ func (e *Engine) InGameLogic() {
 	if rl.IsKeyPressed(rl.KeyTab) {
 		e.StateEngine = INVENTORY
 	}
-
 
 	// Camera
 	e.Camera.Target = rl.Vector2{X: e.Player.Position.X + 70, Y: e.Player.Position.Y + 70}
@@ -164,7 +176,9 @@ func (e *Engine) CheckCollisions() {
 
 	e.MonsterCollisions()
 	e.TrackMonsterLogic()
+
 }
+
 // func (e *Engine) WorldCollisions() {
 // type def struct PhysicObject {
 //     unsigned int id;
