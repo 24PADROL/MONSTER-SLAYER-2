@@ -15,11 +15,11 @@ func (e *Engine) HomeRendering() {
 	rl.ClearBackground(rl.Blue)
 	rl.DrawTexture(e.LoadingScreen, 0 , 0, rl.White)
 
-	rl.DrawText("MONSTER SLAYER", int32(rl.GetScreenWidth())/2+462-rl.MeasureText("MONSTER SLAYER", 40)/2, int32(rl.GetScreenHeight())/2-300, 40, rl.RayWhite)
-	rl.DrawText("2", int32(rl.GetScreenWidth())/2+462-rl.MeasureText("2", 40)/2, int32(rl.GetScreenHeight())/2-250, 40, rl.RayWhite)
-	rl.DrawText("[Enter] to Play", int32(rl.GetScreenWidth())/2+462-rl.MeasureText("[Enter] to Play", 20)/2, int32(rl.GetScreenHeight())/2, 20, rl.RayWhite)
-	rl.DrawText("[Esc] to Quit", int32(rl.GetScreenWidth())/2+462-rl.MeasureText("[Esc] to Quit", 20)/2, int32(rl.GetScreenHeight())/2+100, 20, rl.RayWhite)
-	rl.DrawText("[G] to WRAAAAAH Settings", int32(rl.GetScreenWidth())/2+462-rl.MeasureText("[G] to WRAAAAAH Settings", 20)/2, int32(rl.GetScreenHeight())/2+200, 20, rl.RayWhite)
+	rl.DrawText("MONSTER SLAYER", int32(rl.GetScreenWidth())/2-rl.MeasureText("MONSTER SLAYER", 40)/2, int32(rl.GetScreenHeight())/2-200, 40, rl.RayWhite)
+	rl.DrawText("2", int32(rl.GetScreenWidth())/2-rl.MeasureText("2", 40)/2, int32(rl.GetScreenHeight())/2-150, 40, rl.RayWhite)
+	rl.DrawText("[Enter] to Play", int32(rl.GetScreenWidth())/2-rl.MeasureText("[Enter] to Play", 20)/2, int32(rl.GetScreenHeight())/2, 20, rl.RayWhite)
+	rl.DrawText("[Esc] to Quit", int32(rl.GetScreenWidth())/2-rl.MeasureText("[Esc] to Quit", 20)/2, int32(rl.GetScreenHeight())/2+100, 20, rl.RayWhite)
+	rl.DrawText("[G] to go to Settings", int32(rl.GetScreenWidth())/2-rl.MeasureText("[G] to go to Settings", 20)/2, int32(rl.GetScreenHeight())/2+200, 20, rl.RayWhite)
 	//Les settings marche pas alors qu'avant ça marchait
 }
 
