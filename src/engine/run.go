@@ -41,7 +41,9 @@ func (engine *Engine) Run() {
 			case GAMEOVER:
 				engine.OverRendering()
 				engine.OverLogic()
-			
+			case COFFRE:
+				engine.CoffreRendering()
+				engine.CoffreLogic()
 			}
 		}
 

@@ -45,7 +45,7 @@ func (e *Engine) InGameRendering() {
 	//Affichage de la vie et de l'argent
 
 	if rl.IsCursorOnScreen(){	
-		rl.SetMouseCursor(3)
+		rl.HideCursor()
 	}
 }
 
@@ -83,13 +83,18 @@ func (e *Engine) FightRendering() {
 			rl.White,
 		)
 	}
-	
+
 	rl.DrawText("COMBAT !!", int32(rl.GetScreenWidth())/2-rl.MeasureText("COMBAT !!", 40)/2, int32(rl.GetScreenHeight())/2-150, 40, rl.RayWhite)
 }
 
 func (e *Engine) OverRendering() {
 	rl.ClearBackground(rl.DarkGray)
 	rl.DrawText("GAMEOVER HAHA ÇA MARCHE", int32(rl.GetScreenWidth())/2-rl.MeasureText("GAMEOVER HAHA ÇA MARCHE", 20)/2, int32(rl.GetScreenHeight())/2, 20, rl.RayWhite)
+}
+
+func (e *Engine) CoffreRendering() {
+	rl.ClearBackground(rl.Pink)
+	rl.DrawText("Le coffre est vide pour l'instant tkt ça arrive", int32(rl.GetScreenWidth())/2-rl.MeasureText("Le coffre est vide pour l'instant tkt ça arrive", 20)/2, int32(rl.GetScreenHeight())/2, 20, rl.RayWhite)
 }
 
 func (e *Engine) SettingsRendering() {

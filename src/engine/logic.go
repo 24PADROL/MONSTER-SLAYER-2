@@ -136,6 +136,13 @@ func (e *Engine) CoffreCollisions() {
 	}
 }
 
+func (e *Engine) CoffreLogic() {
+	if rl.IsKeyDown(rl.KeyE){
+		e.StateMenu = PLAY
+		e.StateEngine = INGAME
+	}
+}
+
 func (e *Engine) InGameLogic() {
 	// Mouvement
 	if rl.IsKeyDown(rl.KeyW) || rl.IsKeyDown(rl.KeyUp) {
