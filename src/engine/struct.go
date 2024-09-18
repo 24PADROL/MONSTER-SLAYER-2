@@ -50,6 +50,5 @@ type Engine struct {
 
 type Fight struct {
 	CurrentMonster entity.Monster
-	CurrentMonsterIndex int
 }
 

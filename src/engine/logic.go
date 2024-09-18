@@ -3,11 +3,12 @@ package engine
 import (
 	"main/src/entity"
 	// "main/src/fight"
+	
+
 	//"main/src/fight"
 
 	rl "github.com/gen2brain/raylib-go/raylib"
 )
-
 func (e *Engine) HomeLogic() {
 
 	//Musique
@@ -48,7 +49,7 @@ func (e *Engine) InventoryLogic() {
 	}
 }
 func (e *Engine) OverLogic() {
-	if e.Player.Health <= 0{
+	if e.Player.Health <= 0 {
 		e.StateEngine = GAMEOVER
 	}
 }
@@ -78,6 +79,44 @@ func (e *Engine) FightLogic() { //[ 0, 5, 8, 6] [ 0, 8, 6]
 		// e.Player.ToString()
 		// e.Fight.CurrentMonster.ToString()
 		
+	// 	if e.Player.Health <= 0 {
+	// 		e.Player.IsAlive = false
+	// 		e.Player.Money /= 2
+	// 		e.StateEngine = GAMEOVER
+	// 	} else if e.Fight.CurrentMonster.Health <= 0 {
+	// 		e.Monsters = append(e.Monsters[:e.Fight.CurrentMonsterIndex], e.Monsters[e.Fight.CurrentMonsterIndex+1:]...)
+	// 		e.StateMenu = PLAY
+	// 		e.StateEngine = INGAME
+	// 		e.Player.Inventory = append(e.Player.Inventory, e.Fight.CurrentMonster.Loot...)
+	// 		e.Player.Money += e.Fight.CurrentMonster.Worth
+	// 		// fmt.Println("----------------DEAD-------------------")
+	// 	} else {
+	// 		// fmt.Println("----------------COMBAT-------------------")
+	// 		if rl.IsKeyPressed(rl.KeyE) {
+	// 			e.Player.Attack(&e.Fight.CurrentMonster)
+	// 			e.Fight.CurrentMonster.Attack(&e.Player)
+	// 		}
+
+	// 		// e.Player.ToString()
+	// 		// e.Fight.CurrentMonster.ToString()
+
+	// 	}
+
+	e.Battle()
+ }
+}
+func (e *Engine) TrackMonsterLogic() {
+	for i := 0; i < len(e.Monsters); i++ {
+
+		if e.Monsters[i].IsAlive {
+			distance := rl.Vector2Distance(e.Player.Position, e.Monsters[i].Position)
+
+			if distance <= ChaseDistance {
+				direction := rl.Vector2Subtract(e.Player.Position, e.Monsters[i].Position)
+				direction = rl.Vector2Normalize(direction)
+				e.Monsters[i].Position = rl.Vector2Add(e.Monsters[i].Position, direction)
+			}
+		}
 	}
 
 	// fight.Fight()
@@ -134,11 +173,19 @@ func (e *Engine) InGameLogic() {
 	}
 	rl.UpdateMusicStream(e.Music)
 }
-
 func (e *Engine) CheckCollisions() {
 
 	e.MonsterCollisions()
 	e.TrackMonsterLogic()
+}
+func (e *Engine) WorldCollisions() {
+type def struct PhysicObject {
+    unsigned int id;
+    Transform transform;
+    Collider collider;
+    Rigidbody rigidbody;
+    bool enabled;
+} PhysicObject;
 }
 
 func (e *Engine) MonsterCollisions() {
@@ -149,18 +196,18 @@ func (e *Engine) MonsterCollisions() {
 			monster.Position.Y > e.Player.Position.Y-20 &&
 			monster.Position.Y < e.Player.Position.Y+20 {
 
-				e.Fight.CurrentMonster = e.Monsters[i]
-				e.Fight.CurrentMonsterIndex = i
+			monster.Index = i
 
-				e.StateEngine = FIGHT
-				//e.CurrentMonster = e.Monsters[i]
+			e.Fight.CurrentMonster = e.Monsters[i]
 
-				if monster.Name == "Yann" {
-					if rl.IsKeyDown(rl.KeyE) {
-						e.NormalTalk(monster, "RWAAAAAAAAAAH")
-						//lancer un combat ?
-					}
+			e.StateEngine = FIGHT
+
+			if monster.Name == "Yann" {
+				if rl.IsKeyDown(rl.KeyE) {
+					e.NormalTalk(monster, "RWAAAAAAAAAAH")
+					//lancer un combat ?
 				}
+			}
 		} else {
 			e.NormalTalk(monster, "Vas-y viens")
 		}
@@ -184,5 +231,5 @@ func (e *Engine) PauseLogic() {
 	//Musique
 	rl.UpdateMusicStream(e.Music)
 }
-//NOOOOOOOOOON
 
+//NOOOOOOOOOON
