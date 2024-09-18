@@ -334,7 +334,7 @@
                 {
                  "height":192,
                  "id":1,
-                 "name":"",
+                 "name":"farm field",
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -345,7 +345,7 @@
                 {
                  "height":160,
                  "id":2,
-                 "name":"",
+                 "name":"house 2",
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -356,7 +356,7 @@
                 {
                  "height":160,
                  "id":4,
-                 "name":"",
+                 "name":"house 1",
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -367,7 +367,7 @@
                 {
                  "height":32,
                  "id":6,
-                 "name":"",
+                 "name":"chest 2",
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -378,7 +378,7 @@
                 {
                  "height":32,
                  "id":8,
-                 "name":"",
+                 "name":"wood",
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -389,7 +389,7 @@
                 {
                  "height":32,
                  "id":10,
-                 "name":"",
+                 "name":"barrel 1",
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -398,20 +398,9 @@
                  "y":128
                 }, 
                 {
-                 "height":0,
-                 "id":11,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":32,
-                 "x":288,
-                 "y":160
-                }, 
-                {
                  "height":32,
                  "id":13,
-                 "name":"",
+                 "name":"little trees 1",
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -422,7 +411,7 @@
                 {
                  "height":32,
                  "id":15,
-                 "name":"",
+                 "name":"lantern 1",
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -433,7 +422,7 @@
                 {
                  "height":32,
                  "id":17,
-                 "name":"",
+                 "name":"pumpkin",
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -444,7 +433,7 @@
                 {
                  "height":32,
                  "id":19,
-                 "name":"",
+                 "name":"boxes",
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -455,7 +444,7 @@
                 {
                  "height":32,
                  "id":21,
-                 "name":"",
+                 "name":"lantern 2",
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -466,7 +455,7 @@
                 {
                  "height":32,
                  "id":23,
-                 "name":"",
+                 "name":"bench and trees",
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -475,20 +464,9 @@
                  "y":416
                 }, 
                 {
-                 "height":0,
-                 "id":24,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":32,
-                 "x":384,
-                 "y":416
-                }, 
-                {
                  "height":32,
                  "id":26,
-                 "name":"",
+                 "name":"bench 1 ",
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -499,7 +477,7 @@
                 {
                  "height":32,
                  "id":27,
-                 "name":"",
+                 "name":"chest",
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -510,7 +488,7 @@
                 {
                  "height":32,
                  "id":29,
-                 "name":"",
+                 "name":"wood ",
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -521,7 +499,7 @@
                 {
                  "height":32,
                  "id":31,
-                 "name":"",
+                 "name":"dark trees 2",
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -532,7 +510,7 @@
                 {
                  "height":32,
                  "id":33,
-                 "name":"",
+                 "name":"dark trees 1",
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -543,7 +521,7 @@
                 {
                  "height":32,
                  "id":35,
-                 "name":"",
+                 "name":"little rock 1",
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -552,108 +530,20 @@
                  "y":512
                 }, 
                 {
-                 "height":96,
-                 "id":37,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":192,
-                 "x":-18016,
-                 "y":6912
-                }, 
-                {
-                 "height":0,
-                 "id":38,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":0,
-                 "x":-12736,
-                 "y":5824
-                }, 
-                {
-                 "height":32,
-                 "id":40,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":1280,
-                 "x":32,
-                 "y":-32
-                }, 
-                {
-                 "height":832,
-                 "id":42,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":32,
-                 "x":1280,
-                 "y":-32
-                }, 
-                {
-                 "height":32,
-                 "id":44,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":1280,
-                 "x":32,
-                 "y":800
-                }, 
-                {
-                 "height":32,
-                 "id":45,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":32,
-                 "x":0,
-                 "y":800
-                }, 
-                {
-                 "height":832,
-                 "id":47,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":32,
-                 "x":-32,
-                 "y":-32
-                }, 
-                {
                  "height":32,
                  "id":49,
-                 "name":"",
+                 "name":"dark trees 3",
                  "rotation":0,
                  "type":"",
                  "visible":true,
-                 "width":32,
+                 "width":64,
                  "x":352,
                  "y":736
                 }, 
                 {
                  "height":32,
-                 "id":50,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":32,
-                 "x":384,
-                 "y":736
-                }, 
-                {
-                 "height":32,
                  "id":52,
-                 "name":"",
+                 "name":"little rock 2",
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -664,18 +554,18 @@
                 {
                  "height":32,
                  "id":54,
-                 "name":"",
+                 "name":"fountain",
                  "rotation":0,
                  "type":"",
                  "visible":true,
-                 "width":96,
-                 "x":480,
+                 "width":128,
+                 "x":448,
                  "y":512
                 }, 
                 {
                  "height":32,
                  "id":57,
-                 "name":"",
+                 "name":"car",
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -686,7 +576,7 @@
                 {
                  "height":32,
                  "id":59,
-                 "name":"",
+                 "name":"little tree",
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -697,7 +587,7 @@
                 {
                  "height":64,
                  "id":62,
-                 "name":"",
+                 "name":"big rock 1",
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -708,7 +598,7 @@
                 {
                  "height":32,
                  "id":64,
-                 "name":"",
+                 "name":"big trees",
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -719,7 +609,7 @@
                 {
                  "height":64,
                  "id":66,
-                 "name":"",
+                 "name":"big rock 2",
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -728,20 +618,20 @@
                  "y":512
                 }, 
                 {
-                 "height":32,
+                 "height":64,
                  "id":69,
-                 "name":"",
+                 "name":"temple wall 1",
                  "rotation":0,
                  "type":"",
                  "visible":true,
                  "width":256,
                  "x":704,
-                 "y":224
+                 "y":192
                 }, 
                 {
                  "height":32,
                  "id":71,
-                 "name":"",
+                 "name":"temple pillar 1",
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -752,7 +642,7 @@
                 {
                  "height":32,
                  "id":72,
-                 "name":"",
+                 "name":"temple pillar 2",
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -761,21 +651,9 @@
                  "y":256
                 }, 
                 {
-                 "height":32,
-                 "id":74,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":224,
-                 "x":1056,
-                 "y":224
-                },
-            
-                {
                  "height":128,
                  "id":77,
-                 "name":"",
+                 "name":"temple place west 1",
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -786,7 +664,7 @@
                 {
                  "height":0,
                  "id":78,
-                 "name":"",
+                 "name":"temple place west 2",
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -797,7 +675,7 @@
                 {
                  "height":0,
                  "id":79,
-                 "name":"",
+                 "name":"temple place east 1",
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -808,7 +686,7 @@
                 {
                  "height":128,
                  "id":80,
-                 "name":"",
+                 "name":"temple place east 2",
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -819,7 +697,7 @@
                 {
                  "height":32,
                  "id":81,
-                 "name":"",
+                 "name":"statue 2",
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -830,7 +708,7 @@
                 {
                  "height":32,
                  "id":82,
-                 "name":"",
+                 "name":"statue 1",
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -839,103 +717,71 @@
                  "y":64
                 }, 
                 {
-                 "height":32,
-                 "id":83,
-                 "name":"",
+                 "height":64,
+                 "id":86,
+                 "name":"temple wall 2 ",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":256,
+                 "x":1024,
+                 "y":192
+                }, 
+                {
+                 "height":800,
+                 "id":98,
+                 "name":"border east",
                  "rotation":0,
                  "type":"",
                  "visible":true,
                  "width":32,
-                 "x":448,
-                 "y":512
+                 "x":1280,
+                 "y":0
                 }, 
                 {
-                 "height":224,
-                 "id":84,
-                 "name":"",
+                 "height":32,
+                 "id":102,
+                 "name":"border north",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":1280,
+                 "x":0,
+                 "y":-32
+                }, 
+                {
+                 "height":800,
+                 "id":103,
+                 "name":"border west",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":32,
+                 "x":-32,
+                 "y":0
+                }, 
+                {
+                 "height":32,
+                 "id":104,
+                 "name":"border south",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":1280,
+                 "x":0,
+                 "y":800
+                },
+            
+                {
+                 "height":192,
+                 "id":112,
+                 "name":"light wall west ",
                  "rotation":0,
                  "type":"",
                  "visible":true,
                  "width":0,
                  "x":704,
                  "y":0
-                }, 
-                {
-                 "height":0,
-                 "id":85,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":256,
-                 "x":704,
-                 "y":192
-                }, 
-                {
-                 "height":0,
-                 "id":86,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":256,
-                 "x":1024,
-                 "y":192
-                }, 
-                {
-                 "height":64,
-                 "id":87,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":32,
-                 "x":1024,
-                 "y":192
-                }, 
-                {
-                 "height":32,
-                 "id":88,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":32,
-                 "x":928,
-                 "y":192
-                }, 
-                {
-                 "height":32,
-                 "id":89,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":0,
-                 "x":736,
-                 "y":448
-                }, 
-                {
-                 "height":32,
-                 "id":90,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":0,
-                 "x":1152,
-                 "y":448
-                }, 
-                {
-                 "height":32,
-                 "id":91,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":32,
-                 "x":0,
-                 "y":-32
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -944,7 +790,7 @@
          "y":0
         }],
  "nextlayerid":11,
- "nextobjectid":92,
+ "nextobjectid":113,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.11.0",
@@ -953,7 +799,7 @@
         {
          "columns":21,
          "firstgid":1,
-         "image":"tiles.png",
+         "image":"32rogues-0.3.0\/32rogues\/tiles.png",
          "imageheight":768,
          "imagewidth":672,
          "margin":0,
@@ -966,7 +812,7 @@
         {
          "columns":5,
          "firstgid":505,
-         "image":"rogues.png",
+         "image":"32rogues-0.3.0\/32rogues\/rogues.png",
          "imageheight":160,
          "imagewidth":160,
          "margin":0,
@@ -979,7 +825,7 @@
         {
          "columns":8,
          "firstgid":530,
-         "image":"items.png",
+         "image":"32rogues-0.3.0\/32rogues\/items.png",
          "imageheight":704,
          "imagewidth":256,
          "margin":0,
@@ -992,7 +838,7 @@
         {
          "columns":7,
          "firstgid":706,
-         "image":"monsters.png",
+         "image":"32rogues-0.3.0\/32rogues\/monsters.png",
          "imageheight":256,
          "imagewidth":224,
          "margin":0,
@@ -1005,7 +851,7 @@
         {
          "columns":8,
          "firstgid":762,
-         "image":"TX Tileset Grass.png",
+         "image":"Pixel Art Top Down - Basic\/Texture\/TX Tileset Grass.png",
          "imageheight":256,
          "imagewidth":256,
          "margin":0,
@@ -1018,7 +864,7 @@
         {
          "columns":16,
          "firstgid":826,
-         "image":"TX Plant.png",
+         "image":"Pixel Art Top Down - Basic\/Texture\/TX Plant.png",
          "imageheight":512,
          "imagewidth":512,
          "margin":0,
@@ -1031,7 +877,7 @@
         {
          "columns":16,
          "firstgid":1082,
-         "image":"TX Props.png",
+         "image":"Pixel Art Top Down - Basic\/Texture\/TX Props.png",
          "imageheight":512,
          "imagewidth":512,
          "margin":0,
@@ -1071,7 +917,7 @@
         {
          "columns":16,
          "firstgid":1338,
-         "image":"TX Struct.png",
+         "image":"Pixel Art Top Down - Basic\/Texture\/TX Struct.png",
          "imageheight":512,
          "imagewidth":512,
          "margin":0,
@@ -1084,7 +930,7 @@
         {
          "columns":16,
          "firstgid":1594,
-         "image":"TX Tileset Wall.png",
+         "image":"Pixel Art Top Down - Basic\/Texture\/TX Tileset Wall.png",
          "imageheight":512,
          "imagewidth":512,
          "margin":0,
@@ -1097,7 +943,7 @@
         {
          "columns":6,
          "firstgid":1850,
-         "image":"House.png",
+         "image":"WoodenHouse-Pixel\/House.png",
          "imageheight":182,
          "imagewidth":214,
          "margin":0,
@@ -1110,7 +956,7 @@
         {
          "columns":5,
          "firstgid":1880,
-         "image":"house1.png",
+         "image":"Archive\/house1.png",
          "imageheight":228,
          "imagewidth":163,
          "margin":0,
@@ -1123,7 +969,7 @@
         {
          "columns":4,
          "firstgid":1915,
-         "image":"cit1.png",
+         "image":"Archive\/cit1.png",
          "imageheight":132,
          "imagewidth":143,
          "margin":0,
@@ -1136,7 +982,7 @@
         {
          "columns":3,
          "firstgid":1931,
-         "image":"1.png",
+         "image":"craftpix-net-672461-free-swamp-game-tileset-pixel-art\/3 Objects\/Trees\/1.png",
          "imageheight":103,
          "imagewidth":101,
          "margin":0,
@@ -1149,7 +995,7 @@
         {
          "columns":3,
          "firstgid":1940,
-         "image":"2.png",
+         "image":"craftpix-net-672461-free-swamp-game-tileset-pixel-art\/3 Objects\/Trees\/2.png",
          "imageheight":132,
          "imagewidth":104,
          "margin":0,
@@ -1162,7 +1008,7 @@
         {
          "columns":3,
          "firstgid":1952,
-         "image":"3.png",
+         "image":"craftpix-net-672461-free-swamp-game-tileset-pixel-art\/3 Objects\/Trees\/3.png",
          "imageheight":150,
          "imagewidth":123,
          "margin":0,

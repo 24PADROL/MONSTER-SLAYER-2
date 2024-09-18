@@ -7,7 +7,6 @@ import (
 
 	rl "github.com/gen2brain/raylib-go/raylib"
 )
-
 func (e *Engine) HomeLogic() {
 
 	//Musique
@@ -133,7 +132,6 @@ func (e *Engine) InGameLogic() {
 	}
 	rl.UpdateMusicStream(e.Music)
 }
-
 func (e *Engine) CheckCollisions() {
 
 	e.MonsterCollisions()
