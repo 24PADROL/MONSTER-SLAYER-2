@@ -56,23 +56,23 @@ func (e *Engine) OverLogic() {
 
 func (e *Engine) FightLogic() { //[ 0, 5, 8, 6] [ 0, 8, 6]
 
-	if e.Player.Health <= 0 {
-		e.Player.IsAlive = false
-		e.Player.Money /= 2
-		e.StateEngine = GAMEOVER
-	} else if e.Fight.CurrentMonster.Health <= 0 {
-		e.Monsters = append(e.Monsters[:e.Fight.CurrentMonsterIndex], e.Monsters[e.Fight.CurrentMonsterIndex+1:]...)
-		e.StateMenu = PLAY
-		e.StateEngine = INGAME
-		e.Player.Inventory = append(e.Player.Inventory, e.Fight.CurrentMonster.Loot...)
-		e.Player.Money += e.Fight.CurrentMonster.Worth
-		// fmt.Println("----------------DEAD-------------------")
-	} else {
-		// fmt.Println("----------------COMBAT-------------------")
-		if rl.IsKeyPressed(rl.KeyE) {
-			e.Player.Attack(&e.Fight.CurrentMonster)
-			e.Fight.CurrentMonster.Attack(&e.Player)
-		}
+	// if e.Player.Health <= 0 {
+	// 	e.Player.IsAlive = false
+	// 	e.Player.Money /= 2
+	// 	e.StateEngine = GAMEOVER
+	// } else if e.Fight.CurrentMonster.Health <= 0 {
+	// 	e.Monsters = append(e.Monsters[:e.Fight.CurrentMonsterIndex], e.Monsters[e.Fight.CurrentMonsterIndex+1:]...)
+	// 	e.StateMenu = PLAY
+	// 	e.StateEngine = INGAME
+	// 	e.Player.Inventory = append(e.Player.Inventory, e.Fight.CurrentMonster.Loot...)
+	// 	e.Player.Money += e.Fight.CurrentMonster.Worth
+	// 	// fmt.Println("----------------DEAD-------------------")
+	// } else {
+	// 	// fmt.Println("----------------COMBAT-------------------")
+	// 	if rl.IsKeyPressed(rl.KeyE) {
+	// 		e.Player.Attack(&e.Fight.CurrentMonster)
+	// 		e.Fight.CurrentMonster.Attack(&e.Player)
+	// 	}
 
 		
 
@@ -104,7 +104,7 @@ func (e *Engine) FightLogic() { //[ 0, 5, 8, 6] [ 0, 8, 6]
 
 	e.Battle()
  }
-}
+
 func (e *Engine) TrackMonsterLogic() {
 	for i := 0; i < len(e.Monsters); i++ {
 
@@ -122,20 +122,7 @@ func (e *Engine) TrackMonsterLogic() {
 	// fight.Fight()
 }
 
-func (e *Engine) TrackMonsterLogic(){
-    for i := 0; i < len(e.Monsters); i++ { 
 
-        if e.Monsters[i].IsAlive {
-            distance := rl.Vector2Distance(e.Player.Position, e.Monsters[i].Position)
-
-            if distance <= ChaseDistance {
-                direction := rl.Vector2Subtract(e.Player.Position, e.Monsters[i].Position)
-                direction = rl.Vector2Normalize(direction)
-                e.Monsters[i].Position = rl.Vector2Add(e.Monsters[i].Position, direction)
-            }
-        }
-    }
-}
 func (e *Engine) InGameLogic() {
 	// Mouvement
 	if rl.IsKeyDown(rl.KeyW) || rl.IsKeyDown(rl.KeyUp) {
