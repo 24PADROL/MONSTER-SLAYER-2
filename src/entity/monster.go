@@ -12,6 +12,7 @@ type Monster struct {
 	Position rl.Vector2
 	Health   int
 	Damage   int
+	Speed	float32
 	Loot     []item.Item
 	Worth    int //valeur en argent quand tué
 

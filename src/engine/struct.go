@@ -22,6 +22,7 @@ const (
 	INVENTORY engine = iota
 	GAMEOVER engine = iota
 	FIGHT 	engine = iota
+	ChaseDistance = 100
 )
 
 type Engine struct {
@@ -38,6 +39,9 @@ type Engine struct {
 	Camera rl.Camera2D
 
 	MapJSON MapJSON
+
+	LoadingScreen rl.Texture2D
+	LoadingScreenCombat rl.Texture2D
 
 	IsRunning   bool
 	StateMenu   menu

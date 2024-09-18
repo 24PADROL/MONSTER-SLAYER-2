@@ -44,7 +44,7 @@ func (e *Engine) InitEntities() {
 	
 
 	e.Player = entity.Player{
-		Position:  rl.Vector2{X: 300, Y: 300},
+		Position:  rl.Vector2{X: 932, Y: 640},
 		Health:    100,
 		Money:     1000,
 		Speed:     2,
@@ -57,7 +57,7 @@ func (e *Engine) InitEntities() {
 
 	e.Monsters = append(e.Monsters, entity.Monster{
 		Name:     "Yann",
-		Position: rl.Vector2{X: 400, Y: 320},
+		Position: rl.Vector2{X: 932, Y: 320},
 		Health:   20,
 		Damage:   5,
 		Loot:     []item.Item{},

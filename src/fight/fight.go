@@ -1,44 +1,43 @@
-package fight
+// package fight
 
-import (
-	"fmt"
-	"main/src/entity"
+// import (
+// 	"main/src/engine"
+// 	"main/src/entity"
 
-	rl "github.com/gen2brain/raylib-go/raylib"
-)
+// 	rl "github.com/gen2brain/raylib-go/raylib"
+// )
 
-type fight int
+// type fight int
 
-const (
-	PLAYER_TURN  fight = iota
-	MONSTER_TURN fight = iota
-)
+// const (
+// 	PLAYER_TURN  fight = iota
+// 	MONSTER_TURN fight = iota
+// )
 
-func Fight(player entity.Player, monster entity.Monster) {
+// func Fight(e* player entity.Player, monster entity.Monster) {
 	
+// 	if e.Player.Health <= 0 {
+// 		e.Player.IsAlive = false
+// 		e.Player.Money /= 2
+// 		e.StateEngine = GAMEOVER
+// 	} else if e.Fight.CurrentMonster.Health <= 0 {
+// 		e.Monsters = append(e.Monsters[:e.Fight.CurrentMonsterIndex], e.Monsters[e.Fight.CurrentMonsterIndex+1:]...)
+// 		e.StateMenu = PLAY
+// 		e.StateEngine = INGAME
+// 		e.Player.Inventory = append(e.Player.Inventory, e.Fight.CurrentMonster.Loot...)
+// 		e.Player.Money += e.Fight.CurrentMonster.Worth
+// 		// fmt.Println("----------------DEAD-------------------")
+// 	} else {
+// 		// fmt.Println("----------------COMBAT-------------------")
+// 		if rl.IsKeyPressed(rl.KeyE) {
+// 			e.Player.Attack(&e.Fight.CurrentMonster)
+// 			e.Fight.CurrentMonster.Attack(&e.Player)
+// 		}
 
-	for { // Boucle infinie
-		// Check si le joueur ou le monstre est vaincu. Si c'est le cas, on sort de la boucle
-		if player.Health <= 0 {
-			player.IsAlive = false
-			player.Money /= 2
-			break
-		} else if monster.Health <= 0 {
-			player.Inventory = append(player.Inventory, monster.Loot...)
-			player.Money += monster.Worth
-			fmt.Println("----------------DEAD-------------------")
-			break
-		} else {
-			fmt.Println("----------------COMBAT-------------------")
+		
 
-			if rl.IsKeyPressed(rl.KeyE) {
-				player.Attack(&monster)
-				monster.Attack(&player)
-			}
-
-			player.ToString()
-			monster.ToString()
-			
-		}
-	}
-}
+// 		// e.Player.ToString()
+// 		// e.Fight.CurrentMonster.ToString()
+		
+// 	}
+// }
