@@ -137,7 +137,7 @@ func (e *Engine) CheckCollisions() {
 	e.TrackMonsterLogic()
 }
 func (e *Engine) WorldCollisions() {
-typedef struct PhysicObject {
+type def struct PhysicObject {
     unsigned int id;
     Transform transform;
     Collider collider;
@@ -145,6 +145,7 @@ typedef struct PhysicObject {
     bool enabled;
 } PhysicObject;
 }
+
 func (e *Engine) MonsterCollisions() {
 
 	for i, monster := range e.Monsters {
