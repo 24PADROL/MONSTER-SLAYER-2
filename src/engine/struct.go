@@ -2,6 +2,7 @@ package engine
 
 import (
 	"main/src/entity"
+	"main/src/item"
 
 	rl "github.com/gen2brain/raylib-go/raylib"
 )
@@ -31,7 +32,7 @@ const (
 type Engine struct {
 	Player   entity.Player
 	Monsters []entity.Monster
-	// Shop  []entity.Shop
+	Shop  []entity.Shop
 	Coffre	[]entity.Coffre
 	Fight Fight
 	

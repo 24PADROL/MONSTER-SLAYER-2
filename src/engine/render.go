@@ -69,10 +69,12 @@ func (e *Engine) InventoryRendering() {
 }
 func (e *Engine) FightRendering() {
 	rl.DrawTexture(e.LoadingScreenCombat, 0 , 0, rl.White)
+	rl.DrawText("Pv :", int32(rl.GetScreenWidth())/23-rl.MeasureText("Pv :", 40)/2, int32(rl.GetScreenHeight())/2-375, 35, rl.Red)
+	rl.DrawText(strconv.Itoa(e.Player.Health), int32(rl.GetScreenWidth())/7-rl.MeasureText("Home Menu", 40)/2, int32(rl.GetScreenHeight())/2-375, 40, rl.Red)
 	rl.DrawTexturePro(
 		e.Player.Sprite,
 		rl.NewRectangle(0, 0, 100, 100),
-		rl.NewRectangle(100, 100, 400, 400),
+		rl.NewRectangle(100, 100, 600, 600),
 		rl.Vector2{X: 0, Y: 0},
 		0,
 		rl.White,
@@ -82,7 +84,7 @@ func (e *Engine) FightRendering() {
 		rl.DrawTexturePro(
 			monster.Sprite,
 			rl.NewRectangle(0, 0, 100, 100),
-			rl.NewRectangle(750, 100, 500, 500),
+			rl.NewRectangle(750, 100, 600, 600),
 			rl.Vector2{X: 0, Y: 0},
 			0,
 			rl.White,
@@ -130,8 +132,8 @@ func (e *Engine) RenderPlayer() {
 		0,
 		rl.White,
 	)
-	
 }
+
 
 // func (e *Engine) RenderShop() {
 

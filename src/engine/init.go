@@ -29,14 +29,14 @@ func (e *Engine) Init() {
 
 func (e *Engine) InitEntities() {
 
-	e.Coffre = append(e.Coffre, entity.Coffre{
-		Name:     "Potion",
-		Position: rl.Vector2{X: 600, Y: 320},
-		Loot:     []item.Item{},
+	// e.Coffre = append(e.Coffre, entity.Coffre{
+	// 	Name:     "Potion",
+	// 	Position: rl.Vector2{X: 600, Y: 320},
+	// 	Loot:     []item.Item{},
 
-		Sprite:   rl.LoadTexture("textures/entities/orc/Orc-Idle.png"),
+	// 	Sprite:   rl.LoadTexture("textures/entities/orc/Orc-Idle.png"),
 		
-	})
+	// })
 	
 	// e.Shop = append(e.Shop, entity.Shop{
 	// 	Name:     "Shop",
@@ -53,11 +53,14 @@ func (e *Engine) InitEntities() {
 		Money:     1000,
 		Speed:     2,
 		Inventory: []item.Item{},
+		MaxHealth: 100,
 
 		IsAlive: true,
 
 		Sprite: e.Player.Sprite,
 	}
+
+	e.Player.Inventory = append(e.Player.Inventory, item.Item{Name: "Potion", Price: 5, IsConsumable: true, IsEquippable: false})
 
 	e.Monsters = append(e.Monsters, entity.Monster{
 		Name:     "Yann",

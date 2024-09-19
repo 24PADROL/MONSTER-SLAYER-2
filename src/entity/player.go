@@ -13,11 +13,20 @@ type Player struct {
 	Money     int
 	Speed     float32
 	Inventory []item.Item
+	Animation Animation
+	MaxHealth int
 
 	IsAlive bool
 
 	Sprite rl.Texture2D
 }
+
+type Animation int
+
+const (
+	IDLE Animation = iota
+	WALK Animation = iota
+)
 
 func (p *Player) Attack(m *Monster) {
 	m.Health -= 3
