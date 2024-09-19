@@ -141,12 +141,8 @@ func (e *Engine) InGameLogic() {
 	if rl.IsKeyDown(rl.KeyD) || rl.IsKeyDown(rl.KeyRight) {
 		e.Player.Position.X += e.Player.Speed
 	}
-	if rl.IsKeyPressed(rl.KeyTab) {
-		e.StateEngine = INVENTORY
-		if rl.IsKeyPressed(rl.KeyM) {
-			e.Player.Attack(&e.Fight.CurrentMonster)
-			e.Fight.CurrentMonster.Attack(&e.Player)
-		}
+	if rl.IsKeyPressed(rl.KeyM) {
+		
 	}
 
 	// Camera
@@ -198,35 +194,6 @@ func (e *Engine) CheckCollisions() {
 	e.TrackMonsterLogic()
 	e.CoffreCollisions()
 }
-
-// func (e *Engine) CheckCollisionsWithObjects() bool {
-// 	playerRectangle := rl.NewRectangle(e.Player.Position.X, e.Player.Position.Y, 40, 40)
-// 	// * 2 - 16
-// 	for _, obj := range e.Objects {
-// 		objectsRectangle := rl.NewRectangle(obj.X, obj.Y, obj.Width, obj.Height)
-// 		if rl.CheckCollision(playerRectangle, objectsRectangle) {
-// 			return true
-// 		}
-// 	}
-// 	return false
-// }
-
-// func (e *Engine) BlockCollisions() {
-// 	if e.CheckCollisionsWithObjects() {
-// 		if rl.IsKeyDown(rl.KeyW) || rl.IsKeyDown(rl.KeyUp) {
-// 			e.Player.Position.X += e.Player.Speed
-// 		}
-// 		if rl.IsKeyDown(rl.KeyS) || rl.IsKeyDown(rl.KeyDown) {
-// 			e.Player.Position.X -= e.Player.Speed
-// 		}
-// 		if rl.IsKeyDown(rl.KeyA) || rl.IsKeyDown(rl.KeyLeft) {
-// 			e.Player.Position.Y += e.Player.Speed
-// 		}
-// 		if rl.IsKeyDown(rl.KeyD) || rl.IsKeyDown(rl.KeyRight) {
-// 			e.Player.Position.Y -= e.Player.Speed
-// 		}
-// 	}
-// }
 
 func (e *Engine) MonsterCollisions() {
 

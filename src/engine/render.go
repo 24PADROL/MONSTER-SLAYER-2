@@ -13,7 +13,7 @@ func (e *Engine) Rendering() {
 
 func (e *Engine) HomeRendering() {
 	rl.ClearBackground(rl.Blue)
-	rl.DrawTexture(e.LoadingScreen, 0 , 0, rl.White)
+	rl.DrawTexture(e.LoadingScreen, 0, 0, rl.White)
 
 	rl.DrawText("MONSTER SLAYER", int32(rl.GetScreenWidth())/2-rl.MeasureText("MONSTER SLAYER", 40)/2, int32(rl.GetScreenHeight())/2-200, 40, rl.RayWhite)
 	rl.DrawText("2", int32(rl.GetScreenWidth())/2-rl.MeasureText("2", 40)/2, int32(rl.GetScreenHeight())/2-150, 40, rl.RayWhite)
@@ -45,16 +45,36 @@ func (e *Engine) InGameRendering() {
 	rl.DrawText("Argent :", int32(rl.GetScreenWidth())/19-rl.MeasureText("Argent :", 40)/3, int32(rl.GetScreenHeight())/2-325, 35, rl.Yellow)
 	rl.DrawText(strconv.Itoa(e.Player.Health), int32(rl.GetScreenWidth())/7-rl.MeasureText("Home Menu", 40)/2, int32(rl.GetScreenHeight())/2-375, 40, rl.Red)
 	rl.DrawText(strconv.Itoa(e.Player.Money), int32(rl.GetScreenWidth())/6-rl.MeasureText("Home Menu", 40)/4, int32(rl.GetScreenHeight())/2-325, 40, rl.Yellow)
-	rl.DrawRectangle(10 ,150 ,100 , 600, rl.Purple)
+	rl.DrawRectangle(300, 650, 800, 100, rl.Purple)
+	rl.DrawTexturePro(
+		e.Player.Sprite,
+		rl.NewRectangle(0, 0, 100, 100),
+		rl.NewRectangle(175, 500, 400, 400),
+		rl.Vector2{X: 0, Y: 0},
+		0,
+		rl.White,
+	)
+		for _, monster := range e.Monsters {
+			rl.DrawTexturePro(
+				monster.Sprite,
+				rl.NewRectangle(0, 0, 100, 100),
+				rl.NewRectangle(350, 500, 400, 400),
+				rl.Vector2{X: 0, Y: 0},
+				0,
+				rl.White,
+			)
+		}
+	
+	
 	//Affichage de la vie et de l'argent
 
-	if rl.IsCursorOnScreen(){	
+	if rl.IsCursorOnScreen() {
 		rl.HideCursor()
 	}
 }
 
 func (e *Engine) PauseRendering() {
-	rl.DrawTexture(e.LoadingScreenPause, 0 , 0, rl.White)
+	rl.DrawTexture(e.LoadingScreenPause, 0, 0, rl.White)
 	rl.ClearBackground(rl.Red)
 
 	rl.DrawText("Pause", int32(rl.GetScreenWidth())/2-rl.MeasureText("Paused", 40)/2, int32(rl.GetScreenHeight())/2-150, 40, rl.RayWhite)
@@ -62,9 +82,10 @@ func (e *Engine) PauseRendering() {
 	rl.DrawText("[Q] pour quitter", int32(rl.GetScreenWidth())/2-rl.MeasureText("[Esc] pour quitter", 20)/2, int32(rl.GetScreenHeight())/2+100, 20, rl.RayWhite)
 
 }
-	//JE TESTE L'OVERTURE DE L'INVENTAIRE
+
+// JE TESTE L'OVERTURE DE L'INVENTAIRE
 func (e *Engine) FightRendering() {
-	rl.DrawTexture(e.LoadingScreenCombat, 0 , 0, rl.White)
+	rl.DrawTexture(e.LoadingScreenCombat, 0, 0, rl.White)
 	rl.DrawText("Pv :", int32(rl.GetScreenWidth())/23-rl.MeasureText("Pv :", 40)/2, int32(rl.GetScreenHeight())/2-375, 35, rl.Red)
 	rl.DrawText(strconv.Itoa(e.Player.Health), int32(rl.GetScreenWidth())/7-rl.MeasureText("Home Menu", 40)/2, int32(rl.GetScreenHeight())/2-375, 40, rl.Red)
 	rl.DrawTexturePro(
@@ -75,7 +96,7 @@ func (e *Engine) FightRendering() {
 		0,
 		rl.White,
 	)
-	
+
 	for _, monster := range e.Monsters {
 		rl.DrawTexturePro(
 			monster.Sprite,
@@ -91,18 +112,17 @@ func (e *Engine) FightRendering() {
 }
 
 func (e *Engine) OverRendering() {
-	rl.DrawTexture(e.LoadingScreenGameOver, 0 , 0, rl.White)
+	rl.DrawTexture(e.LoadingScreenGameOver, 0, 0, rl.White)
 	rl.ClearBackground(rl.DarkGray)
 
 	rl.DrawText("GAMEOVER HAHA ÇA MARCHE", int32(rl.GetScreenWidth())/2-rl.MeasureText("GAMEOVER HAHA ÇA MARCHE", 20)/2, int32(rl.GetScreenHeight())/2, 20, rl.RayWhite)
 }
 
 func (e *Engine) CoffreRendering() {
-	
+
 	rl.ClearBackground(rl.Pink)
 	rl.DrawText("Le coffre est vide pour l'instant tkt ça arrive", int32(rl.GetScreenWidth())/2-rl.MeasureText("Le coffre est vide pour l'instant tkt ça arrive", 20)/2, int32(rl.GetScreenHeight())/2, 20, rl.RayWhite)
 }
-
 
 func (e *Engine) SettingsRendering() {
 	rl.ClearBackground(rl.Yellow)
@@ -112,8 +132,8 @@ func (e *Engine) SettingsRendering() {
 	//JE TESTE L'OVERTURE DE L'INVENTAIRE
 }
 
-func (e *Engine) ShopRendering(){
-	
+func (e *Engine) ShopRendering() {
+
 	rl.ClearBackground(rl.Green)
 	rl.DrawText("Le Shop est vide pour l'instant tkt ça arrive", int32(rl.GetScreenWidth())/2-rl.MeasureText("Le Shop est vide pour l'instant tkt ça arrive", 20)/2, int32(rl.GetScreenHeight())/2, 20, rl.RayWhite)
 }
@@ -129,7 +149,6 @@ func (e *Engine) RenderPlayer() {
 		rl.White,
 	)
 }
-
 
 // func (e *Engine) RenderShop() {
 
@@ -156,7 +175,6 @@ func (e *Engine) RenderCoffre() {
 	}
 }
 
-
 func (e *Engine) RenderMonsters() {
 	for _, monster := range e.Monsters {
 		rl.DrawTexturePro(
@@ -170,7 +188,7 @@ func (e *Engine) RenderMonsters() {
 	}
 }
 
-func (e *Engine) RenderAnimationMonster(){
+func (e *Engine) RenderAnimationMonster() {
 }
 
 func (e *Engine) RenderDialog(m entity.Monster, sentence string) {
@@ -185,4 +203,4 @@ func (e *Engine) RenderDialog(m entity.Monster, sentence string) {
 	)
 
 	rl.EndMode2D()
-}      
+}
