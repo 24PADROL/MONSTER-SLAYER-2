@@ -92,8 +92,9 @@ func (e *Engine) FightRendering() {
 }
 
 func (e *Engine) OverRendering() {
-	rl.ClearBackground(rl.DarkGray)
 	rl.DrawTexture(e.LoadingScreenGameOver, 0 , 0, rl.White)
+	rl.ClearBackground(rl.DarkGray)
+
 	rl.DrawText("GAMEOVER HAHA ÇA MARCHE", int32(rl.GetScreenWidth())/2-rl.MeasureText("GAMEOVER HAHA ÇA MARCHE", 20)/2, int32(rl.GetScreenHeight())/2, 20, rl.RayWhite)
 }
 

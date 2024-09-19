@@ -57,7 +57,7 @@ func (m *Monster) Draw() {
 }
 
 func (m *Monster) Attack(p *Player) {
-	p.Health -= 10
+	p.Health -= 100
 }
 
 func (m *Monster) ToString() {
