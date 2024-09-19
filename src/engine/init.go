@@ -62,12 +62,20 @@ func (e *Engine) InitEntities() {
 
 	e.Player.Inventory = append(e.Player.Inventory, item.Item{Name: "Potion", Price: 5, IsConsumable: true, IsEquippable: false})
 
+
+	potion := item.Item{
+		Name: "potion",
+		Price: 66666666666666,
+		IsConsumable: true,
+		IsEquippable: false,
+	}
+
 	e.Monsters = append(e.Monsters, entity.Monster{
 		Name:     "Yann",
 		Position: rl.Vector2{X: 932, Y: 320},
 		Health:   20,
 		Damage:   5,
-		Loot:     []item.Item{},
+		Loot:     []item.Item{potion},
 		Worth:    12,
 		Index:    len(e.Monsters),
 		IsAlive:  true,

@@ -44,14 +44,6 @@ func (e *Engine) SettingsLogic() {
 	//Musique
 	rl.UpdateMusicStream(e.Music)
 }
-func (e *Engine) InventoryLogic() {
-	if rl.IsKeyPressed(rl.KeyTab) {
-		e.StateMenu = PLAY
-		e.StateEngine = INGAME
-
-		}
-	}
-
 
 
 func (e *Engine) Consumable(Item item.Item) {

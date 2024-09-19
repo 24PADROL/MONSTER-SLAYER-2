@@ -45,6 +45,7 @@ func (e *Engine) InGameRendering() {
 	rl.DrawText("Argent :", int32(rl.GetScreenWidth())/19-rl.MeasureText("Argent :", 40)/3, int32(rl.GetScreenHeight())/2-325, 35, rl.Yellow)
 	rl.DrawText(strconv.Itoa(e.Player.Health), int32(rl.GetScreenWidth())/7-rl.MeasureText("Home Menu", 40)/2, int32(rl.GetScreenHeight())/2-375, 40, rl.Red)
 	rl.DrawText(strconv.Itoa(e.Player.Money), int32(rl.GetScreenWidth())/6-rl.MeasureText("Home Menu", 40)/4, int32(rl.GetScreenHeight())/2-325, 40, rl.Yellow)
+	rl.DrawRectangle(10 ,150 ,100 , 600, rl.Purple)
 	//Affichage de la vie et de l'argent
 
 	if rl.IsCursorOnScreen(){	
@@ -61,12 +62,7 @@ func (e *Engine) PauseRendering() {
 	rl.DrawText("[Q] pour quitter", int32(rl.GetScreenWidth())/2-rl.MeasureText("[Esc] pour quitter", 20)/2, int32(rl.GetScreenHeight())/2+100, 20, rl.RayWhite)
 
 }
-func (e *Engine) InventoryRendering() {
-	rl.ClearBackground(rl.Blue)
-
-	rl.DrawText("C'est l'inventaire ça", int32(rl.GetScreenWidth())/2-rl.MeasureText("C'est l'inventaire ça", 20)/2, int32(rl.GetScreenHeight())/2, 20, rl.RayWhite)
 	//JE TESTE L'OVERTURE DE L'INVENTAIRE
-}
 func (e *Engine) FightRendering() {
 	rl.DrawTexture(e.LoadingScreenCombat, 0 , 0, rl.White)
 	rl.DrawText("Pv :", int32(rl.GetScreenWidth())/23-rl.MeasureText("Pv :", 40)/2, int32(rl.GetScreenHeight())/2-375, 35, rl.Red)

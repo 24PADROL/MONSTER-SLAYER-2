@@ -29,10 +29,6 @@ func (engine *Engine) Run() {
 			case PAUSE:
 				engine.PauseRendering()
 				engine.PauseLogic()
-
-			case INVENTORY:
-				engine.InventoryRendering()
-				engine.InventoryLogic()
 			
 			case FIGHT:
 				engine.FightRendering()

@@ -28,6 +28,8 @@ type Monster struct {
 	MaxFrames   int
 }
 
+
+
 var CurrentFrame int
 var FrameCount int
 var speed int= 5
