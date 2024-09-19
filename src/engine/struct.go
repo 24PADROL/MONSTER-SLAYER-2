@@ -31,7 +31,7 @@ const (
 type Engine struct {
 	Player   entity.Player
 	Monsters []entity.Monster
-	Shop  []entity.Shop
+	// Shop  []entity.Shop
 	Coffre	[]entity.Coffre
 	Fight Fight
 	

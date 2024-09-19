@@ -135,20 +135,20 @@ func (e *Engine) CoffreCollisions() {
 	}
 }
 
-func (e *Engine) ShopCollisions() {
-	for _, Shop := range e.Shop {
-		if Shop.Position.X > e.Player.Position.X-30 &&
-			Shop.Position.X < e.Player.Position.X+10 &&
-			Shop.Position.Y > e.Player.Position.Y-30 &&
-			Shop.Position.Y < e.Player.Position.Y+10 {
-			if Shop.Name == "Potion" {
-				if rl.IsKeyPressed(rl.KeyE) {
-					e.StateEngine = COFFRE
-				}
-			}
-		}
-	}
-}
+// func (e *Engine) ShopCollisions() {
+// 	for _, Shop := range e.Shop {
+// 		if Shop.Position.X > e.Player.Position.X-30 &&
+// 			Shop.Position.X < e.Player.Position.X+10 &&
+// 			Shop.Position.Y > e.Player.Position.Y-30 &&
+// 			Shop.Position.Y < e.Player.Position.Y+10 {
+// 			if Shop.Name == "Potion" {
+// 				if rl.IsKeyPressed(rl.KeyE) {
+// 					e.StateEngine = COFFRE
+// 				}
+// 			}
+// 		}
+// 	}
+// }
 
 
 func (e *Engine) CoffreLogic() {

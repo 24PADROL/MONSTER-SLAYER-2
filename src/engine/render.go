@@ -72,11 +72,12 @@ func (e *Engine) FightRendering() {
 	rl.DrawTexturePro(
 		e.Player.Sprite,
 		rl.NewRectangle(0, 0, 100, 100),
-		rl.NewRectangle(100, 100, 500, 500),
+		rl.NewRectangle(100, 100, 400, 400),
 		rl.Vector2{X: 0, Y: 0},
 		0,
 		rl.White,
 	)
+	
 	for _, monster := range e.Monsters {
 		rl.DrawTexturePro(
 			monster.Sprite,
@@ -88,7 +89,7 @@ func (e *Engine) FightRendering() {
 		)
 	}
 
-	rl.DrawText("COMBAT !!", int32(rl.GetScreenWidth())/2-rl.MeasureText("COMBAT !!", 40)/2, int32(rl.GetScreenHeight())/2-150, 40, rl.RayWhite)
+	rl.DrawText("COMBAT !!", int32(rl.GetScreenWidth())/2-rl.MeasureText("COMBAT !!", 40)/2, int32(rl.GetScreenHeight())/2-250, 40, rl.RayWhite)
 }
 
 func (e *Engine) OverRendering() {

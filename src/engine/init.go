@@ -38,14 +38,14 @@ func (e *Engine) InitEntities() {
 		
 	})
 	
-	e.Shop = append(e.Shop, entity.Shop{
-		Name:     "Shop",
-		Position: rl.Vector2{X: 600, Y: 320},
-		Loot:     []item.Item{},
+	// e.Shop = append(e.Shop, entity.Shop{
+	// 	Name:     "Shop",
+	// 	Position: rl.Vector2{X: 600, Y: 320},
+	// 	Loot:     []item.Item{},
 
-		Sprite:   rl.LoadTexture("textures/entities/orc/Orc-Idle.png"),
+	// 	Sprite:   rl.LoadTexture("textures/entities/orc/Orc-Idle.png"),
 		
-	})
+	// })
 
 	e.Player = entity.Player{
 		Position:  rl.Vector2{X: 932, Y: 640},
