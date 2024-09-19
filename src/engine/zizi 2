@@ -2,8 +2,6 @@ package engine
 
 import (
 	"main/src/entity"
-	"main/src/item"
-
 	// "main/src/fight"
 
 	//"main/src/fight"
@@ -44,14 +42,10 @@ func (e *Engine) SettingsLogic() {
 	//Musique
 	rl.UpdateMusicStream(e.Music)
 }
-
-
-func (e *Engine) Consumable(Item item.Item) {
-	if Item.IsConsumable {
-		e.Player.Health += 5
-		if e.Player.Health > e.Player.MaxHealth {
-			e.Player.Health = e.Player.MaxHealth
-		}
+func (e *Engine) InventoryLogic() {
+	if rl.IsKeyPressed(rl.KeyTab) {
+		e.StateMenu = PLAY
+		e.StateEngine = INGAME
 	}
 }
 func (e *Engine) OverLogic() {
@@ -61,6 +55,50 @@ func (e *Engine) OverLogic() {
 }
 
 func (e *Engine) FightLogic() { //[ 0, 5, 8, 6] [ 0, 8, 6]
+
+	// if e.Player.Health <= 0 {
+	// 	e.Player.IsAlive = false
+	// 	e.Player.Money /= 2
+	// 	e.StateEngine = GAMEOVER
+	// } else if e.Fight.CurrentMonster.Health <= 0 {
+	// 	e.Monsters = append(e.Monsters[:e.Fight.CurrentMonsterIndex], e.Monsters[e.Fight.CurrentMonsterIndex+1:]...)
+	// 	e.StateMenu = PLAY
+	// 	e.StateEngine = INGAME
+	// 	e.Player.Inventory = append(e.Player.Inventory, e.Fight.CurrentMonster.Loot...)
+	// 	e.Player.Money += e.Fight.CurrentMonster.Worth
+	// 	// fmt.Println("----------------DEAD-------------------")
+	// } else {
+	// 	// fmt.Println("----------------COMBAT-------------------")
+	// 	if rl.IsKeyPressed(rl.KeyE) {
+	// 		e.Player.Attack(&e.Fight.CurrentMonster)
+	// 		e.Fight.CurrentMonster.Attack(&e.Player)
+	// 	}
+
+	// e.Player.ToString()
+	// e.Fight.CurrentMonster.ToString()
+
+	// 	if e.Player.Health <= 0 {
+	// 		e.Player.IsAlive = false
+	// 		e.Player.Money /= 2
+	// 		e.StateEngine = GAMEOVER
+	// 	} else if e.Fight.CurrentMonster.Health <= 0 {
+	// 		e.Monsters = append(e.Monsters[:e.Fight.CurrentMonsterIndex], e.Monsters[e.Fight.CurrentMonsterIndex+1:]...)
+	// 		e.StateMenu = PLAY
+	// 		e.StateEngine = INGAME
+	// 		e.Player.Inventory = append(e.Player.Inventory, e.Fight.CurrentMonster.Loot...)
+	// 		e.Player.Money += e.Fight.CurrentMonster.Worth
+	// 		// fmt.Println("----------------DEAD-------------------")
+	// 	} else {
+	// 		// fmt.Println("----------------COMBAT-------------------")
+	// 		if rl.IsKeyPressed(rl.KeyE) {
+	// 			e.Player.Attack(&e.Fight.CurrentMonster)
+	// 			e.Fight.CurrentMonster.Attack(&e.Player)
+	// 		}
+
+	// 		// e.Player.ToString()
+	// 		// e.Fight.CurrentMonster.ToString()
+
+	// 	}
 
 	e.Battle()
 }
@@ -112,6 +150,7 @@ func (e *Engine) CoffreCollisions() {
 // 	}
 // }
 
+
 func (e *Engine) CoffreLogic() {
 	if rl.IsKeyPressed(rl.KeyE) {
 		e.StateMenu = PLAY
@@ -119,7 +158,7 @@ func (e *Engine) CoffreLogic() {
 	}
 }
 
-func (e *Engine) ShopLogic() {
+func (e *Engine) ShopLogic(){
 	if rl.IsKeyPressed(rl.KeyE) {
 		e.StateMenu = PLAY
 		e.StateEngine = INGAME
@@ -130,7 +169,6 @@ func (e *Engine) InGameLogic() {
 	// Mouvement
 	if rl.IsKeyDown(rl.KeyW) || rl.IsKeyDown(rl.KeyUp) {
 		e.Player.Position.Y -= e.Player.Speed
-		// e.Player.Animation = entity.WALK
 	}
 	if rl.IsKeyDown(rl.KeyS) || rl.IsKeyDown(rl.KeyDown) {
 		e.Player.Position.Y += e.Player.Speed
@@ -143,10 +181,6 @@ func (e *Engine) InGameLogic() {
 	}
 	if rl.IsKeyPressed(rl.KeyTab) {
 		e.StateEngine = INVENTORY
-		if rl.IsKeyPressed(rl.KeyM) {
-			e.Player.Attack(&e.Fight.CurrentMonster)
-			e.Fight.CurrentMonster.Attack(&e.Player)
-		}
 	}
 
 	// Camera
@@ -198,36 +232,6 @@ func (e *Engine) CheckCollisions() {
 	e.TrackMonsterLogic()
 	e.CoffreCollisions()
 }
-
-// func (e *Engine) CheckCollisionsWithObjects() bool {
-// 	playerRectangle := rl.NewRectangle(e.Player.Position.X, e.Player.Position.Y, 40, 40)
-// 	// * 2 - 16
-// 	for _, obj := range e.Objects {
-// 		objectsRectangle := rl.NewRectangle(obj.X, obj.Y, obj.Width, obj.Height)
-// 		if rl.CheckCollision(playerRectangle, objectsRectangle) {
-// 			return true
-// 		}
-// 	}
-// 	return false
-// }
-
-// func (e *Engine) BlockCollisions() {
-// 	if e.CheckCollisionsWithObjects() {
-// 		if rl.IsKeyDown(rl.KeyW) || rl.IsKeyDown(rl.KeyUp) {
-// 			e.Player.Position.X += e.Player.Speed
-// 		}
-// 		if rl.IsKeyDown(rl.KeyS) || rl.IsKeyDown(rl.KeyDown) {
-// 			e.Player.Position.X -= e.Player.Speed
-// 		}
-// 		if rl.IsKeyDown(rl.KeyA) || rl.IsKeyDown(rl.KeyLeft) {
-// 			e.Player.Position.Y += e.Player.Speed
-// 		}
-// 		if rl.IsKeyDown(rl.KeyD) || rl.IsKeyDown(rl.KeyRight) {
-// 			e.Player.Position.Y -= e.Player.Speed
-// 		}
-// 	}
-// }
-
 func (e *Engine) MonsterCollisions() {
 
 	for i, monster := range e.Monsters {
