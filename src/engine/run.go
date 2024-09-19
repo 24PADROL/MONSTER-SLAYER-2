@@ -5,7 +5,7 @@ import (
 )
 
 func (engine *Engine) Run() {
-	rl.SetTargetFPS(60)
+	rl.SetTargetFPS(120)
 
 	for engine.IsRunning {
 

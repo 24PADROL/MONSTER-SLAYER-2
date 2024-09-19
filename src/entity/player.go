@@ -12,7 +12,7 @@ type Player struct {
 	Health    int
 	Money     int
 	Speed     float32
-	Inventory []item.Item
+	Inventory map[item.Item]int
 	Animation Animation
 	MaxHealth int
 
@@ -40,4 +40,14 @@ func (p *Player) ToString() {
 		Inventaire: %+v
 	
 	\n`, p.Health, p.Money, p.Inventory)
+}
+
+func (p *Player) AddItemToInv(Item item.Item) {
+	for item, _ := range p.Inventory {
+		if item.Name == Item.Name {
+			p.Inventory[item]++
+		} else {
+			p.Inventory[Item] = 1
+		}
+	}
 }

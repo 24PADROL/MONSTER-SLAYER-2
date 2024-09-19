@@ -65,6 +65,13 @@ func (e *Engine) FightLogic() { //[ 0, 5, 8, 6] [ 0, 8, 6]
 	e.Battle()
 }
 
+// func (e *Engine) CompteurPotion() {
+// 	for item.item 
+// 	if item.Name == "potion"{
+
+// 	}
+// }
+
 func (e *Engine) TrackMonsterLogic() {
 	for i := 0; i < len(e.Monsters); i++ {
 
@@ -88,7 +95,7 @@ func (e *Engine) CoffreCollisions() {
 			Coffre.Position.X < e.Player.Position.X+10 &&
 			Coffre.Position.Y > e.Player.Position.Y-30 &&
 			Coffre.Position.Y < e.Player.Position.Y+10 {
-			if Coffre.Name == "Potion" {
+			if Coffre.Name == "Coffre" {
 				if rl.IsKeyPressed(rl.KeyE) {
 					e.StateEngine = COFFRE
 				}
@@ -142,7 +149,7 @@ func (e *Engine) InGameLogic() {
 		e.Player.Position.X += e.Player.Speed
 	}
 	if rl.IsKeyPressed(rl.KeyM) {
-		
+
 	}
 
 	// Camera

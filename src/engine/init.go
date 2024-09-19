@@ -52,7 +52,7 @@ func (e *Engine) InitEntities() {
 		Health:    100,
 		Money:     1000,
 		Speed:     2,
-		Inventory: []item.Item{},
+		Inventory: make(map[item.Item]int),
 		MaxHealth: 100,
 
 		IsAlive: true,
@@ -60,7 +60,7 @@ func (e *Engine) InitEntities() {
 		Sprite: e.Player.Sprite,
 	}
 
-	e.Player.Inventory = append(e.Player.Inventory, item.Item{Name: "Potion", Price: 5, IsConsumable: true, IsEquippable: false})
+	e.Player.Inventory[item.Item{Name: "Potion", Price: 5, IsConsumable: true, IsEquippable: false}] = 1
 
 
 	potion := item.Item{

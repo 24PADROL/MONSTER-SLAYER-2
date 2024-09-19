@@ -38,6 +38,7 @@ func (e *Engine) InGameRendering() {
 	rl.EndMode2D() // On finit le rendu camera
 
 	// Ecriture fixe (car pas affectée par le mode camera)
+
 	rl.DrawText("Bienvenue !", int32(rl.GetScreenWidth())/2-rl.MeasureText("Bienvenue !", 40)/2, int32(rl.GetScreenHeight())/2-350, 40, rl.RayWhite)
 	rl.DrawText("[P] ou [Esc] pour mettre pause", int32(rl.GetScreenWidth())/2-rl.MeasureText("[P] ou [Esc] pour mettre en pause", 20)/2, int32(rl.GetScreenHeight())/2-300, 20, rl.RayWhite)
 	rl.DrawText("[Tab] pour ouvrir l'inventaire", int32(rl.GetScreenWidth())/2-rl.MeasureText("[Tab] pour ouvrir l'inventaire", 20)/2, int32(rl.GetScreenHeight())/2-250, 20, rl.RayWhite)
@@ -45,6 +46,7 @@ func (e *Engine) InGameRendering() {
 	rl.DrawText("Argent :", int32(rl.GetScreenWidth())/19-rl.MeasureText("Argent :", 40)/3, int32(rl.GetScreenHeight())/2-325, 35, rl.Yellow)
 	rl.DrawText(strconv.Itoa(e.Player.Health), int32(rl.GetScreenWidth())/7-rl.MeasureText("Home Menu", 40)/2, int32(rl.GetScreenHeight())/2-375, 40, rl.Red)
 	rl.DrawText(strconv.Itoa(e.Player.Money), int32(rl.GetScreenWidth())/6-rl.MeasureText("Home Menu", 40)/4, int32(rl.GetScreenHeight())/2-325, 40, rl.Yellow)
+	rl.DrawText("FPS : " + strconv.Itoa(int(rl.GetFPS())), 20, 120, 40, rl.Green)
 	rl.DrawRectangle(300, 650, 800, 100, rl.Purple)
 	rl.DrawTexturePro(
 		e.Player.Sprite,

@@ -3,6 +3,8 @@ package engine
 import (
 	// "main/src/engine"
 
+	"fmt"
+
 	rl "github.com/gen2brain/raylib-go/raylib"
 )
 
@@ -23,7 +25,11 @@ func (e *Engine) Battle() {
 	e.Monsters = append(e.Monsters[:e.Fight.CurrentMonster.Index], e.Monsters[e.Fight.CurrentMonster.Index+1:]...)
 	e.StateMenu = PLAY
 	e.StateEngine = INGAME
-	e.Player.Inventory = append(e.Player.Inventory, e.Fight.CurrentMonster.Loot...)
+	for _, item := range e.Fight.CurrentMonster.Loot {
+		e.Player.AddItemToInv(item)
+	}
+	fmt.Println(e.Player.Inventory)
+	
 	e.Player.Money += e.Fight.CurrentMonster.Worth
 	// fmt.Println("----------------DEAD-------------------")
 } else {
