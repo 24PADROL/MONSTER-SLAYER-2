@@ -81,6 +81,18 @@ func (e *Engine) InitEntities() {
 		IsAlive:  true,
 		Sprite:   rl.LoadTexture("textures/entities/orc/Orc-Idle.png"),
 	})
+	
+	e.Monsters = append(e.Monsters, entity.Monster{
+		Name:     "Wizzard",
+		Position: rl.Vector2{X: 652, Y: 210},
+		Health:   20,
+		Damage:   5,
+		Loot:     []item.Item{potion},
+		Worth:    12,
+		Index:    len(e.Monsters),
+		IsAlive:  true,
+		Sprite:   rl.LoadTexture("textures/entities/wizzard/Wizzart_A.png"),
+	})
 
 	e.Player.Money = 120
 }

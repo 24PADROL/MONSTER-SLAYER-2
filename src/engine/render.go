@@ -98,17 +98,25 @@ func (e *Engine) FightRendering() {
 		0,
 		rl.White,
 	)
-
-	for _, monster := range e.Monsters {
+	if e.Fight.CurrentMonster.Name == "Wizzard"{
 		rl.DrawTexturePro(
-			monster.Sprite,
-			rl.NewRectangle(0, 0, 100, 100),
-			rl.NewRectangle(750, 100, 600, 600),
+			e.Fight.CurrentMonster.Sprite,
+			rl.NewRectangle(0, 0, 50, 50),
+			rl.NewRectangle(750, 150, 300, 300),
 			rl.Vector2{X: 0, Y: 0},
 			0,
 			rl.White,
-		)
-	}
+		)}
+		if e.Fight.CurrentMonster.Name == "Yann"{
+			rl.DrawTexturePro(
+				e.Fight.CurrentMonster.Sprite,
+				rl.NewRectangle(0, 0, 100, 100),
+				rl.NewRectangle(750, 100, 600, 600),
+				rl.Vector2{X: 0, Y: 0},
+				0,
+				rl.White,
+			)}
+	
 
 	rl.DrawText("COMBAT !!", int32(rl.GetScreenWidth())/2-rl.MeasureText("COMBAT !!", 40)/2, int32(rl.GetScreenHeight())/2-250, 40, rl.RayWhite)
 }
@@ -179,15 +187,25 @@ func (e *Engine) RenderCoffre() {
 
 func (e *Engine) RenderMonsters() {
 	for _, monster := range e.Monsters {
-		rl.DrawTexturePro(
-			monster.Sprite,
-			rl.NewRectangle(0, 0, 100, 100),
-			rl.NewRectangle(monster.Position.X, monster.Position.Y, 150, 150),
-			rl.Vector2{X: 0, Y: 0},
-			0,
-			rl.White,
-		)
-	}
+		if monster.Name == "Wizzard"{
+			rl.DrawTexturePro(
+				monster.Sprite,
+				rl.NewRectangle(0, 0, 64, 64),
+				rl.NewRectangle(monster.Position.X, monster.Position.Y, 100, 100),
+				rl.Vector2{X: 0, Y: 0},
+				0,
+				rl.White,
+			)}
+			if monster.Name == "Yann"{
+				rl.DrawTexturePro(
+					monster.Sprite,
+					rl.NewRectangle(0, 0, 100, 100),
+					rl.NewRectangle(monster.Position.X, monster.Position.Y, 200, 200),
+					rl.Vector2{X: 0, Y: 0},
+					0,
+					rl.White,
+				)}
+				}
 }
 
 func (e *Engine) RenderAnimationMonster() {
