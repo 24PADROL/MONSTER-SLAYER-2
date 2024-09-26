@@ -1,4 +1,3 @@
-
 package engine
 
 import (
@@ -18,24 +17,23 @@ const (
 type engine int
 
 const (
-	INGAME  engine = iota
-	PAUSE    engine = iota
-	INVENTORY engine = iota
-	GAMEOVER engine = iota
-	FIGHT 	engine = iota
-	COFFRE engine = iota
-	SHOP engine = iota
-	ChaseDistance = 100
-
+	INGAME        engine = iota
+	PAUSE         engine = iota
+	INVENTORY     engine = iota
+	GAMEOVER      engine = iota
+	FIGHT         engine = iota
+	COFFRE        engine = iota
+	SHOP          engine = iota
+	ChaseDistance        = 100
 )
 
 type Engine struct {
 	Player   entity.Player
 	Monsters []entity.Monster
-	Shop  []entity.Shop
-	Coffre	[]entity.Coffre
-	Fight Fight
-	
+	Shop     []entity.Shop
+	Coffre   []entity.Coffre
+	Fight    Fight
+
 	Music       rl.Music
 	MusicVolume float32
 
@@ -45,10 +43,10 @@ type Engine struct {
 
 	MapJSON MapJSON
 
-	LoadingScreen rl.Texture2D
-	LoadingScreenCombat rl.Texture2D
+	LoadingScreen         rl.Texture2D
+	LoadingScreenCombat   rl.Texture2D
 	LoadingScreenGameOver rl.Texture2D
-	LoadingScreenPause rl.Texture2D
+	LoadingScreenPause    rl.Texture2D
 
 	IsRunning   bool
 	StateMenu   menu

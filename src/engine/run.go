@@ -29,7 +29,7 @@ func (engine *Engine) Run() {
 			case PAUSE:
 				engine.PauseRendering()
 				engine.PauseLogic()
-			
+
 			case FIGHT:
 				engine.FightRendering()
 				engine.FightLogic()

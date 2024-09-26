@@ -26,7 +26,6 @@ func (e *Engine) Init() {
 	e.InitMap("textures/map/tilesets/map.json")
 }
 
-
 func (e *Engine) InitEntities() {
 
 	// e.Coffre = append(e.Coffre, entity.Coffre{
@@ -35,16 +34,16 @@ func (e *Engine) InitEntities() {
 	// 	Loot:     []item.Item{},
 
 	// 	Sprite:   rl.LoadTexture("textures/entities/orc/Orc-Idle.png"),
-		
+
 	// })
-	
+
 	// e.Shop = append(e.Shop, entity.Shop{
 	// 	Name:     "Shop",
 	// 	Position: rl.Vector2{X: 600, Y: 320},
 	// 	Loot:     []item.Item{},
 
 	// 	Sprite:   rl.LoadTexture("textures/entities/orc/Orc-Idle.png"),
-		
+
 	// })
 
 	e.Player = entity.Player{
@@ -62,10 +61,9 @@ func (e *Engine) InitEntities() {
 
 	e.Player.Inventory[item.Item{Name: "Potion", Price: 5, IsConsumable: true, IsEquippable: false}] = 1
 
-
 	potion := item.Item{
-		Name: "potion",
-		Price: 66666666666666,
+		Name:         "potion",
+		Price:        66666666666666,
 		IsConsumable: true,
 		IsEquippable: false,
 	}
@@ -81,7 +79,7 @@ func (e *Engine) InitEntities() {
 		IsAlive:  true,
 		Sprite:   rl.LoadTexture("textures/entities/orc/Orc-Idle.png"),
 	})
-	
+
 	e.Monsters = append(e.Monsters, entity.Monster{
 		Name:     "Wizzard",
 		Position: rl.Vector2{X: 652, Y: 210},
@@ -92,6 +90,18 @@ func (e *Engine) InitEntities() {
 		Index:    len(e.Monsters),
 		IsAlive:  true,
 		Sprite:   rl.LoadTexture("textures/entities/wizzard/Wizzart_A.png"),
+	})
+
+	e.Monsters = append(e.Monsters, entity.Monster{
+		Name:     "Cipher",
+		Position: rl.Vector2{X: 552, Y: 300},
+		Health:   20,
+		Damage:   5,
+		Loot:     []item.Item{potion},
+		Worth:    12,
+		Index:    len(e.Monsters),
+		IsAlive:  true,
+		Sprite:   rl.LoadTexture("textures/entities/wizzard/Wizzart_B.png"),
 	})
 
 	e.Player.Money = 120
@@ -113,11 +123,4 @@ func (e *Engine) InitMusic() {
 
 	rl.PlayMusicStream(e.Music)
 }
-
-//func (e *Engine) InitItem() {
-	//Name:	"Seringue",
-//}
-
-//bonjourvvv
-//MAXIME 
 

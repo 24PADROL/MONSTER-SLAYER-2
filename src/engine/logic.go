@@ -3,10 +3,7 @@ package engine
 import (
 	"main/src/entity"
 	"main/src/item"
-
-	// "main/src/fight"
-
-	//"main/src/fight"
+	"strconv"
 
 	rl "github.com/gen2brain/raylib-go/raylib"
 )
@@ -28,7 +25,6 @@ func (e *Engine) HomeLogic() {
 	}
 	if rl.IsKeyPressed(rl.KeyG) {
 		e.StateMenu = SETTINGS
-		//CA MARCHE PAAAS AVANT CA MARCHAIT
 	}
 
 	if rl.IsKeyPressed(rl.KeyEscape) {
@@ -45,7 +41,6 @@ func (e *Engine) SettingsLogic() {
 	rl.UpdateMusicStream(e.Music)
 }
 
-
 func (e *Engine) Consumable(Item item.Item) {
 	if Item.IsConsumable {
 		e.Player.Health += 5
@@ -54,27 +49,26 @@ func (e *Engine) Consumable(Item item.Item) {
 		}
 	}
 }
+
 func (e *Engine) OverLogic() {
 	if e.Player.Health <= 0 {
 		e.StateEngine = GAMEOVER
 	}
 }
 
-func (e *Engine) FightLogic() { //[ 0, 5, 8, 6] [ 0, 8, 6]
+func (e *Engine) FightLogic() {
 
 	e.Battle()
 }
 
 // func (e *Engine) CompteurPotion() {
-// 	for item.item 
+// 	for item.item
 // 	if item.Name == "potion"{
-
 // 	}
 // }
 
 func (e *Engine) TrackMonsterLogic() {
 	for i := 0; i < len(e.Monsters); i++ {
-
 		if e.Monsters[i].IsAlive {
 			distance := rl.Vector2Distance(e.Player.Position, e.Monsters[i].Position)
 
@@ -85,8 +79,6 @@ func (e *Engine) TrackMonsterLogic() {
 			}
 		}
 	}
-
-	// fight.Fight()
 }
 
 func (e *Engine) CoffreCollisions() {
@@ -148,9 +140,6 @@ func (e *Engine) InGameLogic() {
 	if rl.IsKeyDown(rl.KeyD) || rl.IsKeyDown(rl.KeyRight) {
 		e.Player.Position.X += e.Player.Speed
 	}
-	if rl.IsKeyPressed(rl.KeyM) {
-
-	}
 
 	// Camera
 	e.Camera.Target = rl.Vector2{X: e.Player.Position.X + 70, Y: e.Player.Position.Y + 70}
@@ -170,31 +159,7 @@ func (e *Engine) InGameLogic() {
 	}
 	rl.UpdateMusicStream(e.Music)
 }
-// func (e *Engine) CheckCollisionsWithObjects() bool {
-// 	playerRectangle := rl.NewRectangle(e.Player.Position.X, e.Player.Position.Y, 40, 40)
-// 	// * 2 - 16
-// 	for _, obj := range e.Objects {
-// 		objectsRectangle := rl.NewRectangle(obj.X, obj.Y, obj.Width, obj.Height)
-// 		if rl.CheckCollision(playerRectangle, objectsRectangle) {
-// 			return true
-// 		}
-// 	}
-// 	return false
-// }
 
-// func (e *Engine) BlockCollisions(){
-// 	if e.CheckCollisionsWithObjects(){
-// 		if rl.IsKeyDown(rl.KeyS) || rl.IsKeyDown(rl.KeyDown) {
-// 			e.Player.Position.X -= e.Player.Speed
-// 		}
-// 		if rl.IsKeyDown(rl.KeyA) || rl.IsKeyDown(rl.KeyLeft) {
-// 			e.Player.Position.Y += e.Player.Speed
-// 		}
-// 		if rl.IsKeyDown(rl.KeyD) || rl.IsKeyDown(rl.KeyRight) {
-// 			e.Player.Position.Y -= e.Player.Speed
-// 		}
-// 	}
-// }
 func (e *Engine) CheckCollisions() {
 
 	e.MonsterCollisions()
@@ -223,13 +188,54 @@ func (e *Engine) MonsterCollisions() {
 				}
 			}
 		} else {
-			e.NormalTalk(monster, "Vas-y viens")
+			if monster.Name == "Wizzard" {
+				e.Ciphertalk(monster, "Vas-y viens")
+			}
+			if monster.Name == "Yann" {
+				e.NormalTalk(monster, "Je suis différent")
+			}
+
+			if monster.Name == "Cipher" {
+				e.RobotTalk(monster, "blablabla Ciphertalk")
+
+			}
+
 		}
 	}
 }
 
 func (e *Engine) NormalTalk(m entity.Monster, sentence string) {
 	e.RenderDialog(m, sentence)
+}
+
+func (e *Engine) RobotTalk(m entity.Monster, sentence string) {
+	var string2 string
+	var l string
+	for _, char := range sentence {
+		x := int(char)
+		l = ""
+		for x/2 != 0 {
+			r := x % 2
+			l = strconv.Itoa(r) + l
+			x = x / 2
+		}
+		l = "1" + l
+		for len(l) < 8 {
+			l = "0" + l
+		}
+		string2 = string2 + l
+	}
+	e.RenderDialog(m, string2)
+}
+
+func (e *Engine) Ciphertalk(m entity.Monster, sentence string) {
+	var string2 string
+	for _, char := range sentence {
+		char = char + 2
+		string2 = string2 + string(char)
+
+	}
+	e.RenderDialog(m, string2)
 }
 
 func (e *Engine) PauseLogic() {
@@ -245,5 +251,3 @@ func (e *Engine) PauseLogic() {
 	//Musique
 	rl.UpdateMusicStream(e.Music)
 }
-
-//NOOOOOOOOOON

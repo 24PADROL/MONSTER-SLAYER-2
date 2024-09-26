@@ -16,14 +16,14 @@ func (e *Engine) Load() {
 }
 
 func (e *Engine) LoadCharacter() {
-	switch e.Player.Animation{
+	switch e.Player.Animation {
 	case entity.IDLE:
 		e.Player.Sprite = rl.LoadTexture("textures/entities/soldier/Soldier-Idle.png")
-	case entity.WALK: 
+	case entity.WALK:
 		e.Player.Sprite = rl.LoadTexture("textures/entities/soldier/Soldier-Walk.png")
 
 	}
-	
+
 }
 
 func (e *Engine) UnloadCharacter() {
