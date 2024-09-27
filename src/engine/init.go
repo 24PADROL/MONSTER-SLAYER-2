@@ -37,36 +37,37 @@ func (e *Engine) InitEntities() {
 
 	// })
 
-	// e.Shop = append(e.Shop, entity.Shop{
-	// 	Name:     "Shop",
-	// 	Position: rl.Vector2{X: 600, Y: 320},
-	// 	Loot:     []item.Item{},
+	e.Shop = append(e.Shop, entity.Shop{
+		Name:     "Shop",
+		Position: rl.Vector2{X: 600, Y: 320},
+		Loot:     []item.Item{},
 
-	// 	Sprite:   rl.LoadTexture("textures/entities/orc/Orc-Idle.png"),
+		Sprite:   rl.LoadTexture("textures/entities/wizzard/Wizzart_C.png"),
 
-	// })
+	})
 
 	e.Player = entity.Player{
 		Position:  rl.Vector2{X: 932, Y: 640},
 		Health:    100,
 		Money:     1000,
 		Speed:     2,
-		Inventory: make(map[item.Item]int),
+		Inventory: []item.Item{},
 		MaxHealth: 100,
 
 		IsAlive: true,
 
 		Sprite: e.Player.Sprite,
 	}
-
-	e.Player.Inventory[item.Item{Name: "Potion", Price: 5, IsConsumable: true, IsEquippable: false}] = 1
+	e.Player.Inventory = append(e.Player.Inventory, item.Item{Name: "Potion", Price: 5, IsConsumable: true, IsEquippable: false})
 
 	potion := item.Item{
 		Name:         "potion",
-		Price:        66666666666666,
+		Price:        5,
 		IsConsumable: true,
 		IsEquippable: false,
+		Sprite:    rl.LoadTexture("textures/entities/potion/potion.png"),
 	}
+	
 
 	e.Monsters = append(e.Monsters, entity.Monster{
 		Name:     "Yann",

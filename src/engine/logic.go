@@ -61,12 +61,6 @@ func (e *Engine) FightLogic() {
 	e.Battle()
 }
 
-// func (e *Engine) CompteurPotion() {
-// 	for item.item
-// 	if item.Name == "potion"{
-// 	}
-// }
-
 func (e *Engine) TrackMonsterLogic() {
 	for i := 0; i < len(e.Monsters); i++ {
 		if e.Monsters[i].IsAlive {
@@ -96,20 +90,20 @@ func (e *Engine) CoffreCollisions() {
 	}
 }
 
-// func (e *Engine) ShopCollisions() {
-// 	for _, Shop := range e.Shop {
-// 		if Shop.Position.X > e.Player.Position.X-30 &&
-// 			Shop.Position.X < e.Player.Position.X+10 &&
-// 			Shop.Position.Y > e.Player.Position.Y-30 &&
-// 			Shop.Position.Y < e.Player.Position.Y+10 {
-// 			if Shop.Name == "Potion" {
-// 				if rl.IsKeyPressed(rl.KeyE) {
-// 					e.StateEngine = COFFRE
-// 				}
-// 			}
-// 		}
-// 	}
-// }
+func (e *Engine) ShopCollisions() {
+	for _, Shop := range e.Shop {
+		if Shop.Position.X > e.Player.Position.X-30 &&
+			Shop.Position.X < e.Player.Position.X+10 &&
+			Shop.Position.Y > e.Player.Position.Y-30 &&
+			Shop.Position.Y < e.Player.Position.Y+10 {
+			if Shop.Name == "Potion" {
+				if rl.IsKeyPressed(rl.KeyE) {
+					e.StateEngine = COFFRE
+				}
+			}
+		}
+	}
+}
 
 func (e *Engine) CoffreLogic() {
 	if rl.IsKeyPressed(rl.KeyE) {
@@ -122,6 +116,13 @@ func (e *Engine) ShopLogic() {
 	if rl.IsKeyPressed(rl.KeyE) {
 		e.StateMenu = PLAY
 		e.StateEngine = INGAME
+	}
+}
+
+func (e *Engine) UseInventory() {
+	if rl.IsKeyPressed(rl.KeyM) {
+		e.Player.Inventory = e.Player.Inventory
+		e.Player.Health = e.Player.Health + 5
 	}
 }
 
@@ -196,7 +197,7 @@ func (e *Engine) MonsterCollisions() {
 			}
 
 			if monster.Name == "Cipher" {
-				e.RobotTalk(monster, "blablabla Ciphertalk")
+				e.RobotTalk(monster, "blablabla")
 
 			}
 

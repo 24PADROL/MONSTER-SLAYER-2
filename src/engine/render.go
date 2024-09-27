@@ -48,26 +48,24 @@ func (e *Engine) InGameRendering() {
 	rl.DrawText(strconv.Itoa(e.Player.Money), int32(rl.GetScreenWidth())/6-rl.MeasureText("Home Menu", 40)/4, int32(rl.GetScreenHeight())/2-325, 40, rl.Yellow)
 	rl.DrawText("FPS : "+strconv.Itoa(int(rl.GetFPS())), 20, 120, 40, rl.Green)
 	rl.DrawRectangle(300, 650, 800, 100, rl.Purple)
-	rl.DrawTexturePro(
-		e.Player.Sprite,
-		rl.NewRectangle(0, 0, 100, 100),
-		rl.NewRectangle(175, 500, 400, 400),
-		rl.Vector2{X: 0, Y: 0},
-		0,
-		rl.White,
-	)
-	for _, monster := range e.Monsters {
-		rl.DrawTexturePro(
-			monster.Sprite,
-			rl.NewRectangle(0, 0, 100, 100),
-			rl.NewRectangle(350, 500, 400, 400),
-			rl.Vector2{X: 0, Y: 0},
-			0,
-			rl.White,
-		)
-	}
-
-	//Affichage de la vie et de l'argent
+		// e.Player.Sprite,
+		// rl.NewRectangle(0, 0, 100, 100),
+		// rl.NewRectangle(175, 500, 400, 400),
+		// rl.Vector2{X: 0, Y: 0},
+		// 0,
+		// rl.White,
+		for _, item := range e.Player.Inventory {
+			rl.DrawTexturePro(
+				item.Sprite,
+				rl.NewRectangle(0, 0, 32, 32),
+				rl.NewRectangle(350, 650, 100, 100),
+				rl.Vector2{X: 0, Y: 0},
+				0,
+				rl.White,
+			)
+		}
+		
+	//Affichage de la vie et de l'argent et des l'inventaire
 
 	if rl.IsCursorOnScreen() {
 		rl.HideCursor()
@@ -98,6 +96,26 @@ func (e *Engine) FightRendering() {
 		rl.White,
 	)
 	if e.Fight.CurrentMonster.Name == "Wizzard" {
+		rl.DrawTexturePro(
+			e.Fight.CurrentMonster.Sprite,
+			rl.NewRectangle(0, 0, 50, 50),
+			rl.NewRectangle(750, 150, 300, 300),
+			rl.Vector2{X: 0, Y: 0},
+			0,
+			rl.White,
+		)
+	}
+	if e.Fight.CurrentMonster.Name == "Cipher" {
+		rl.DrawTexturePro(
+			e.Fight.CurrentMonster.Sprite,
+			rl.NewRectangle(0, 0, 50, 50),
+			rl.NewRectangle(750, 150, 300, 300),
+			rl.Vector2{X: 0, Y: 0},
+			0,
+			rl.White,
+		)
+	}
+	if e.Fight.CurrentMonster.Name == "Robot" {
 		rl.DrawTexturePro(
 			e.Fight.CurrentMonster.Sprite,
 			rl.NewRectangle(0, 0, 50, 50),
@@ -161,17 +179,20 @@ func (e *Engine) RenderPlayer() {
 	)
 }
 
-// func (e *Engine) RenderShop() {
+func (e *Engine) RenderShop() {
 
-// 	rl.DrawTexturePro(
-// 		Shop.Sprite,
-// 		rl.NewRectangle(0, 0, 100, 100),
-// 		rl.NewRectangle(Shop.Position.X, Shop.Position.Y, 200, 200),
-// 		rl.Vector2{X: 0, Y: 0},
-// 		0,
-// 		rl.White,
-// 	)
-// }
+	for _, shop := range e.Shop {
+		rl.DrawTexturePro(
+			shop.Sprite,
+			rl.NewRectangle(0, 0, 100, 100),
+			rl.NewRectangle(shop.Position.X, shop.Position.Y, 200, 200),
+			rl.Vector2{X: 0, Y: 0},
+			0,
+			rl.White,
+		)
+	}
+	
+}
 
 func (e *Engine) RenderCoffre() {
 	for _, coffre := range e.Coffre {
